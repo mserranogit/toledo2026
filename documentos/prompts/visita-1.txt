@@ -1,0 +1,72 @@
+quiero que hagas de guia turístico experto en toledo y vayas creando itinerarios sugeridos para visitar la ciudad  , quiero visitar la ciudad los días 
+miércoles 21 de octubre, 2026, y jueves 22 de octubre, 2026
+
+buscar el cuaderno "Toledo2026" en mi cuenta de gemini notebooklm
+utilizalo como fuente de información, aunque no exclusivamente, puedes buscar en internet para complementar la información
+
+en la carpeta fuentes puedes ver el archivo webs.txt que utiliza notebooklm para buscar en internet 
+
+tendrás que tener en cuenta los días de la semana ya que hay actividades gratuitas que se realizan ciertos días de la semana, por ejemplo, el miércoles hay visitas guiadas gratuitas al Alcázar de Toledo por ejemplo.
+
+quiero aprovechar todas las visitas gratuitas que sea posible , siempre y cuando sean compatibles con los itenerarios que me propongas.
+
+crea itinerarios sugeridos para los dias que propongo, mañana y tarde, escogiendo los monumentos mas interesantes de visitar, aprovecha todo lo que sea gratuito sólo si es interesante de ver, 
+ten en cuenta los horarios de los monumentos y actividades gratuitas.
+
+especifica los costes de las entradas a los monumentos y atracciones, así como de los tours que vamos a hacer
+
+quiero mapas de los itinerarios y puntos de interés para poder seguirlos con el google maps en el coche o a pié.
+
+
+
+miércoles 21 de octubre, 2026,
+------------------------------
+mañana
+Yacimiento Arqueológico Cerro del Bú, Peña del Rey Moro y Mirador del Valle desde Toledo
+https://es.wikiloc.com/rutas-senderismo/yacimiento-arqueologico-cerro-del-bu-pena-del-rey-moro-y-mirador-del-valle-desde-toledo-223693028
+
+mapa donde aparcar el coche al inicio de la rutas
+
+resto de la mañana proponme itinerarios con visitas a realizar
+
+tarde
+
+proponme itinerarios con visitas a realizar
+
+noche
+https://www.rutasdetoledo.es/tours/toledo-subterraneo/
+
+
+jueves 22 de octubre, 2026,
+
+mañana
+
+visita guiada catedral
+https://www.getyourguide.com/toledo-l663/visita-toledo-desde-dentro-la-catedral-con-ojos-toledanos-t1208024?ranking_uuid=14c9077d-c046-4fe1-809e-8b1135cec584&referral_redirect=1&q=Toledo&date_from=2026-10-22
+
+
+tarde
+
+orgaz, museo visigodo, y yacimiento de los hitos
+
+https://cultura.castillalamancha.es/patrimonio/yacimientos-visitables/los-hitos
+
+
+alojamiento
+https://www.booking.com/hotel/es/casa-de-la-mezquita.es.html?aid=311090&label=casa-rustica-el-majuelo-3zF0PSz2fmBAdGZPIOxoAgSM601118112950%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atiaud-2395231936738%3Akwd-2442430408073%3Alp9047048%3Ali%3Adem%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YcGt_tphEo8pawEozW2KQ80&sid=18ab63518e527510a0f367a27f9c0f08&all_sr_blocks=25955002_389199621_5_0_0%2C25955001_389199621_4_0_0&checkin=2026-10-21&checkout=2026-10-22&dest_id=8445&dest_type=district&dist=0&group_adults=9&group_children=0&hapos=15&highlighted_blocks=25955002_389199621_5_0_0%2C25955001_389199621_4_0_0&hpos=15&matching_block_id=25955002_389199621_5_0_0&no_rooms=1&req_adults=9&req_children=0&room1=A%2CA%2CA%2CA%2CA%2CA%2CA%2CA%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=25955002_389199621_5_0_0__17075%2C25955001_389199621_4_0_0__15786&srepoch=1789138573&srpvid=8a7b68a91c820ec5&type=total&ucfs=1&
+nuevo precio: 38,26€
+
+
+formato de salida, toda la información que crees genera en html , con un estilo limpio y moderno, no hace falta que sea un unico archivo pueden ser varios ,
+quiero un panel izquierdo con el menú de navegación y los enlaces a cada día, y el contenido de cada día en el panel derecho
+el html generado tiene que ser responsive para que se pueda ver bien en pantallas de movil y tablets
+aseguratelo, con un panel izquierdo que se pueda colapsar.
+
+guardalos en la carpeta /html/visita-1
+
+
+dime si tienes claro lo que quiero
+preguntame cualquier duda
+hazme sugerencias que creas convenientes
+si para un itinirario hay varias opciones dame diferentes opciones  
+

@@ -1,0 +1,7 @@
+crea un proyecto en git hub que se llame toledo2026 que sea privado
+en mi cuenta de github : mserranogit
+incluye en el .gitignore las carpetas:
+- pdf
+sube el proyecto a github
+
+
