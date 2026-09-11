@@ -3,6 +3,6 @@ version: '3.8'
 services:
   toledo-guia:
     build: .
+    expose:
+      - "80"
     restart: unless-stopped
-    ports:
-      - "80:80"
