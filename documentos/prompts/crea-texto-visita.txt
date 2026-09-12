@@ -1,0 +1,36 @@
+ Crea un archivo de texto para cada uno de los monumentos que te indico mas abajo
+ el contenido debe ser un texto explicativo del monumento, del museo, o del espacio natural para ser escuchado in situ cuando se visite.
+ El texto debe ser relatado como si se estuviera contando por un guia
+ la extensión de los textos debe ser la siguiente:
+ -Monasterio de San Juan de los Reyes: texto de aprox 500 palabras
+ -Sinagoga de Santa María la Blanca: texto de aprox 500 palabras
+ -Sinagoga del Tránsito & Museo Sefardí: texto de aprox 500 palabras
+ -Paseo por los Rincones y Miradores de la Judería: texto de aprox 500 palabras
+ Fase 1: creación del texto base
+ Fase 2: una vez lo revise yo convertirás el texto a mp3 para ser escuchado "in situ" con auriculares
+los textos guardalos en la carpeta audios/texto
+los mp3 en la carpeta audios/mp3
+
+dime si tienes alguna duda
+pregunta me si tienes alguna duda
+si lo crees conveniente puedes hacerme sugerencias / mejoras
+ 
+ -Monasterio de San Juan de los Reyes
+ Monumento cumbre del gótico isabelino mandado edificar por los Reyes Católicos para conmemorar la batalla de Toro y servir de panteón real. Su claustro de dos pisos con arquerías caladas, esculturas góticas y artesonado mudéjar en madera policromada es una de las mayores joyas arquitectónicas de España. En el exterior aún cuelgan las cadenas de los cautivos cristianos liberados en la toma de Granada.
+ 
+ -Sinagoga de Santa María la Blanca
+ Construida a finales del siglo XII por arquitectos musulmanes para la comunidad judía toledana en estilo almohade. Posee 32 columnas poligonales que sostienen arcos de herradura y capiteles con motivos vegetales de piñas y lacerías de yeso de una blancura inmaculada. Ejemplo supremo del mestizaje de las Tres Culturas.
+
+ -Sinagoga del Tránsito & Museo Sefardí
+ Erigida en el siglo XIV por Samuel ha-Leví, tesorero del rey Pedro I de Castilla. Su Gran Sala de Oración cuenta con uno de los artesonados de madera de cedro más imponentes de Europa y un friso de yeserías con inscripciones en hebreo ensalzando a Dios y al Rey. Alberga el Museo Sefardí, que documenta la historia y tradiciones hispanojudías.
+ 
+ -Paseo por los Rincones y Miradores de la Judería
+Descenso pausado por el Paseo del Tránsito con vistas al cañón del Tajo, cruce por la Calle de Santo Tomé, la Plaza del Salvador y el Mirador de San Cristóbal. Descubre en el suelo las pequeñas baldosas de cerámica sefardí con el símbolo del 'Hai' (vida) y la menorá grabadas en el pavimento.
+
+Haz lo mismo (texto + mp3)
+
+-Iglesia del Convento de Santo Domingo El Real
+Monasterio dominico fundado en 1364 por la nobleza toledana. Su iglesia conserva portadas mudéjares, yeserías excepcionales y retablos barrocos que han permanecido al margen del turismo masivo durante siglos.
+
+ Convento de Comendadoras de Santiago
+Sede histórica de la Orden de Santiago en Toledo. Arquitectura sobria conventual con claustro sereno, zócalos de azulejería toledana del siglo XVI y oratorios de gran recogimiento.

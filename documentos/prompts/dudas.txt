@@ -25,3 +25,31 @@ cuesta 35€, no 22 que has puesto
 Presupuesto:
 alojamiento 40€
 tour guiado catedral 
+
+
+os pego un link al programa de visita a Toledo 2 días, 1 noche
+https://toledo2026.estoypachope.es/
+a destacar:
+día 21:
+haríamos la visita guiada nocturna 
+https://www.rutasdetoledo.es/tours/toledo-subterraneo/
+coste 12€,  duración 1 hora y media.
+día 22:
+el segundo día por la mañana haríamos una visita guiada a la catedral de Toledo "Visita Toledo desde dentro La Catedral con ojos toledanos" de 2,5h incluye entrada a la catedral de 10€. Cuesta 35€ por persona.
+yo creo que merece la pena, yo ví la catedral hace muchos años y no fue en visita guiada, asi que no la ví bien, no sé que opináis vosotros
+por la tarde visitaríamos Orgaz un pueblo cerca de Toledo 
+que tiene un museo Visigodo y un yacimiento arqueológico también Visigodo
+esto tiene un coste de 8€ por persona.
+en el plan también se incluyen visitas gratuitas del consorcio de toledo
+teneís que contestarme si os parece bien el plan para hacer las reservas
+de las visitas guiadas, incluidas las gratuitas también hay que reservar
+si al hacer las reservas tengo que pagar alguna cantidad
+lo pagaré yo primero y luego os diré para que hagáis un bizum 
+así que echarle un vistazo y me contais
+
+
+en este apartado del html:
+4. Paseo por los Rincones y Miradores de la Judería
+añade un mapa del recorrido que has puesto en audios\texto\paseo-rincones-miradores.txt
+
+

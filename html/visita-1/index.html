@@ -548,11 +548,233 @@
               <div class="step-content">
                 <div class="step-header">
                   <h3 class="step-title">4. Paseo por los Rincones y Miradores de la Judería</h3>
-                  <span class="meta-pill free">Acceso Libre</span>
+                  <span class="meta-pill free">Acceso Libre · 100% Gratuito</span>
                 </div>
                 <p class="step-text">
-                  Descenso pausado por el <strong>Paseo del Tránsito</strong> con vistas al cañón del Tajo, cruce por la <strong>Calle de Santo Tomé</strong>, la <strong>Plaza del Salvador</strong> y el <strong>Mirador de San Cristóbal</strong>. Descubre en el suelo las pequeñas baldosas de cerámica sefardí con el símbolo del 'Hai' (vida) y la menorá grabadas en el pavimento.
+                  Un recorrido a pie concebido para caminar despacio con los ojos atentos tanto al horizonte como a las piedras milenarias y a las huellas secretas bajo tus zapatos. Siguiendo el guión de la <strong>audioguía oficial</strong>, descenderemos por el <strong>Paseo del Tránsito</strong> con vistas al cañón del río Tajo, descubriremos el <strong>Miqvé subterráneo</strong> en la Casa del Judío, rastrearemos las <strong>mezuzot</strong> y baldosas cerámicas del <em>Hai</em> (vida), cruzaremos los <strong>cobertizos medievales</strong> evocando la <em>Leyenda del Pozo Amargo</em>, nos deleitaremos con el aroma a mazapán de la <strong>Calle de Santo Tomé</strong> y culminaremos en la panorámica al atardecer del <strong>Mirador de San Cristóbal</strong>.
                 </p>
+
+                <!-- MAPA TOPOLÓGICO VISUAL DEL RECORRIDO DE LA JUDERÍA -->
+                <div class="trail-topo-card juderia-map-card" style="margin-top: 24px;">
+                  <div class="card-icon-header">
+                    <span class="card-big-icon">🗺️</span>
+                    <div>
+                      <h3 class="box-title">Mapa Visual del Recorrido: Judería Mayor & Miradores</h3>
+                      <span class="location-pill">Ruta a pie de 6 paradas · ~850 metros · 45 min · Itinerario de la Audioguía</span>
+                    </div>
+                  </div>
+
+                  <!-- Gráfico SVG vectorial representativo del paseo -->
+                  <div class="trail-svg-wrapper">
+                    <svg class="trail-topo-svg" viewBox="0 0 920 460" xmlns="http://www.w3.org/2000/svg">
+                      <defs>
+                        <linearGradient id="gradTajo" x1="0%" y1="0%" x2="100%" y2="0%">
+                          <stop offset="0%" stop-color="#bae6fd" stop-opacity="0.9"/>
+                          <stop offset="50%" stop-color="#e0f2fe" stop-opacity="0.95"/>
+                          <stop offset="100%" stop-color="#bae6fd" stop-opacity="0.85"/>
+                        </linearGradient>
+                        <linearGradient id="gradParchment" x1="0%" y1="0%" x2="0%" y2="100%">
+                          <stop offset="0%" stop-color="#fdfbf7"/>
+                          <stop offset="100%" stop-color="#f8f4eb"/>
+                        </linearGradient>
+                        <filter id="shadowBox" x="-10%" y="-10%" width="125%" height="130%">
+                          <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.12"/>
+                        </filter>
+                      </defs>
+
+                      <!-- Marco y fondo de pergamino toledano -->
+                      <rect x="5" y="5" width="910" height="450" rx="14" fill="url(#gradParchment)" stroke="#e2d8c3" stroke-width="1.5"/>
+
+                      <!-- Cañón del Río Tajo al sur / suroeste -->
+                      <path d="M 5,370 C 140,360 280,395 440,385 C 600,375 750,415 915,395 L 915,450 L 5,450 Z" fill="url(#gradTajo)"/>
+                      <text x="460" y="425" fill="#0369a1" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="800" text-anchor="middle" letter-spacing="2">RÍO TAJO · CAÑÓN NATURAL DEL SUR (VISTAS A LOS CIGARRALES)</text>
+
+                      <!-- Títulos cartográficos y referencias de contexto -->
+                      <text x="460" y="38" fill="#852221" font-family="'Cinzel', serif" font-size="15" font-weight="700" text-anchor="middle" letter-spacing="1.5">ITINERARIO AUDIOGUIADO · JUDERÍA MAYOR DE TOLEDO</text>
+                      <text x="460" y="56" fill="#64748b" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" text-anchor="middle">Recorrido a pie: ~850 m · 45 min · Sentido: Mirador del Tránsito ➔ Mirador de San Cristóbal</text>
+
+                      <!-- Monumentos cercanos de referencia (contexto tenue) -->
+                      <rect x="35" y="195" width="130" height="34" rx="6" fill="#ffffff" stroke="#e2e8f0" opacity="0.85"/>
+                      <text x="100" y="212" fill="#64748b" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="700" text-anchor="middle">Sinagoga del Tránsito</text>
+                      <text x="100" y="223" fill="#94a3b8" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" text-anchor="middle">(Museo Sefardí)</text>
+
+                      <rect x="25" y="85" width="150" height="34" rx="6" fill="#ffffff" stroke="#e2e8f0" opacity="0.85"/>
+                      <text x="100" y="102" fill="#64748b" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="700" text-anchor="middle">Sta. María la Blanca</text>
+                      <text x="100" y="113" fill="#94a3b8" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" text-anchor="middle">(Sinagoga Mayor s. XII)</text>
+
+                      <rect x="525" y="75" width="130" height="30" rx="6" fill="#ffffff" stroke="#e2e8f0" opacity="0.85"/>
+                      <text x="590" y="94" fill="#64748b" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="700" text-anchor="middle">Plaza del Salvador</text>
+
+                      <!-- TRAZADO DE LOS TRAMOS DEL PASEO (Líneas discontinuas en curva) -->
+                      <!-- Tramo 1: Mirador Tránsito -> Casa del Judío -->
+                      <path d="M 125,325 C 160,280 200,245 245,215" stroke="#dc2626" stroke-width="4" stroke-dasharray="6,5" fill="none"/>
+                      <rect x="145" y="255" width="95" height="22" rx="11" fill="#fee2e2" stroke="#fca5a5"/>
+                      <text x="192" y="270" fill="#991b1b" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="800" text-anchor="middle">140 m · 2 min</text>
+
+                      <!-- Tramo 2: Casa del Judío -> Huellas Sefarad & Mezuzot -->
+                      <path d="M 245,215 C 295,190 345,170 395,160" stroke="#d97706" stroke-width="4" stroke-dasharray="6,5" fill="none"/>
+                      <rect x="290" y="165" width="95" height="22" rx="11" fill="#fef3c7" stroke="#fde68a"/>
+                      <text x="337" y="180" fill="#92400e" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="800" text-anchor="middle">120 m · 2 min</text>
+
+                      <!-- Tramo 3: Huellas Sefarad -> Cobertizos & Pozo Amargo -->
+                      <path d="M 395,160 C 445,170 485,215 540,245" stroke="#2563eb" stroke-width="4" stroke-dasharray="6,5" fill="none"/>
+                      <rect x="430" y="200" width="95" height="22" rx="11" fill="#dbeafe" stroke="#93c5fd"/>
+                      <text x="477" y="215" fill="#1e40af" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="800" text-anchor="middle">220 m · 4 min</text>
+
+                      <!-- Tramo 4: Cobertizos & Pozo Amargo -> Calle Santo Tomé -->
+                      <path d="M 540,245 C 595,250 640,200 685,150" stroke="#7c3aed" stroke-width="4" stroke-dasharray="6,5" fill="none"/>
+                      <rect x="580" y="175" width="95" height="22" rx="11" fill="#f3e8ff" stroke="#d8b4fe"/>
+                      <text x="627" y="190" fill="#6b21a8" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="800" text-anchor="middle">160 m · 3 min</text>
+
+                      <!-- Tramo 5: Calle Santo Tomé -> Mirador San Cristóbal -->
+                      <path d="M 685,150 C 740,165 770,225 805,305" stroke="#059669" stroke-width="4" stroke-dasharray="6,5" fill="none"/>
+                      <rect x="715" y="225" width="95" height="22" rx="11" fill="#d1fae5" stroke="#6ee7b7"/>
+                      <text x="762" y="240" fill="#065f46" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="800" text-anchor="middle">210 m · 4 min</text>
+
+                      <!-- NODO 1: Mirador del Tránsito -->
+                      <circle cx="125" cy="325" r="18" fill="#dc2626" stroke="#ffffff" stroke-width="3.5" filter="url(#shadowBox)"/>
+                      <text x="125" y="331" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="800" text-anchor="middle">🌅</text>
+                      <rect x="25" y="348" width="195" height="42" rx="8" fill="#ffffff" stroke="#fca5a5" filter="url(#shadowBox)"/>
+                      <text x="122" y="365" fill="#991b1b" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="800" text-anchor="middle">1. MIRADOR DEL TRÁNSITO</text>
+                      <text x="122" y="380" fill="#64748b" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" text-anchor="middle">Inicio · Samuel ha-Leví · Tajo</text>
+
+                      <!-- NODO 2: Casa del Judío -->
+                      <circle cx="245" cy="215" r="17" fill="#d97706" stroke="#ffffff" stroke-width="3.5" filter="url(#shadowBox)"/>
+                      <text x="245" y="221" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="800" text-anchor="middle">🏛️</text>
+                      <rect x="155" y="145" width="175" height="42" rx="8" fill="#ffffff" stroke="#fde68a" filter="url(#shadowBox)"/>
+                      <text x="242" y="162" fill="#b45309" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="800" text-anchor="middle">2. LA CASA DEL JUDÍO</text>
+                      <text x="242" y="177" fill="#64748b" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" text-anchor="middle">C/ Judería · Miqvé Subterráneo</text>
+
+                      <!-- NODO 3: Huellas de Sefarad & Mezuzot -->
+                      <circle cx="395" cy="160" r="17" fill="#2563eb" stroke="#ffffff" stroke-width="3.5" filter="url(#shadowBox)"/>
+                      <text x="395" y="166" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="800" text-anchor="middle">✡️</text>
+                      <rect x="305" y="90" width="180" height="42" rx="8" fill="#ffffff" stroke="#93c5fd" filter="url(#shadowBox)"/>
+                      <text x="395" y="107" fill="#1d4ed8" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="800" text-anchor="middle">3. HUELLAS DE SEFARAD</text>
+                      <text x="395" y="122" fill="#64748b" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" text-anchor="middle">Baldosas 'Hai' (18) & Mezuzot</text>
+
+                      <!-- NODO 4: Cobertizos & Pozo Amargo -->
+                      <circle cx="540" cy="245" r="17" fill="#7c3aed" stroke="#ffffff" stroke-width="3.5" filter="url(#shadowBox)"/>
+                      <text x="540" y="251" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="800" text-anchor="middle">🌉</text>
+                      <rect x="445" y="272" width="195" height="42" rx="8" fill="#ffffff" stroke="#d8b4fe" filter="url(#shadowBox)"/>
+                      <text x="542" y="289" fill="#6d28d9" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="800" text-anchor="middle">4. COBERTIZOS & POZO AMARGO</text>
+                      <text x="542" y="304" fill="#64748b" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" text-anchor="middle">San Juan de Dios · Leyenda Raquel</text>
+
+                      <!-- NODO 5: Calle Santo Tomé -->
+                      <circle cx="685" cy="150" r="17" fill="#c28833" stroke="#ffffff" stroke-width="3.5" filter="url(#shadowBox)"/>
+                      <text x="685" y="156" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="800" text-anchor="middle">🎨</text>
+                      <rect x="600" y="80" width="175" height="42" rx="8" fill="#ffffff" stroke="#fde68a" filter="url(#shadowBox)"/>
+                      <text x="687" y="97" fill="#b45309" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="800" text-anchor="middle">5. CALLE SANTO TOMÉ</text>
+                      <text x="687" y="112" fill="#64748b" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" text-anchor="middle">Mazapán · Señor de Orgaz</text>
+
+                      <!-- NODO 6: Mirador de San Cristóbal -->
+                      <circle cx="805" cy="305" r="18" fill="#059669" stroke="#ffffff" stroke-width="3.5" filter="url(#shadowBox)"/>
+                      <text x="805" y="311" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="800" text-anchor="middle">🌄</text>
+                      <rect x="705" y="332" width="200" height="42" rx="8" fill="#ffffff" stroke="#a7f3d0" filter="url(#shadowBox)"/>
+                      <text x="805" y="349" fill="#065f46" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="800" text-anchor="middle">6. MIRADOR SAN CRISTÓBAL</text>
+                      <text x="805" y="364" fill="#64748b" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" text-anchor="middle">Fin del Paseo · Vistas Ocaso</text>
+                    </svg>
+                  </div>
+
+                  <!-- DESGLOSE DETALLADO DE LAS 6 PARADAS DE LA AUDIOGUÍA -->
+                  <div class="trail-legs-grid">
+
+                    <div class="trail-leg-item" style="border-left-color: #dc2626;">
+                      <div class="trail-leg-header">
+                        <span class="trail-leg-title">Parada 1: Mirador del Tránsito & Samuel ha-Leví</span>
+                        <span class="trail-leg-dist" style="background:#fee2e2; color:#991b1b;">0 m · Inicio (18:45 h)</span>
+                      </div>
+                      <p class="trail-leg-desc">
+                        <strong>Barandilla de piedra del Paseo del Tránsito:</strong> Vistas sobrecogedoras al desfiladero granítico del río Tajo y a los Cigarrales. Bajo el suelo dormita la leyenda del tesoro oculto de Don Samuel ha-Leví (tesorero del rey Pedro I) y las excavaciones del astrólogo Enrique de Villena buscando la piedra filosofal.
+                      </p>
+                    </div>
+
+                    <div class="trail-leg-item" style="border-left-color: #d97706;">
+                      <div class="trail-leg-header">
+                        <span class="trail-leg-title">Parada 2: La Casa del Judío & Miqvé Ritual</span>
+                        <span class="trail-leg-dist" style="background:#fef3c7; color:#92400e;">140 m · 2 min</span>
+                      </div>
+                      <p class="trail-leg-desc">
+                        <strong>Calle de la Judería:</strong> Toledo en tres niveles superpuestos: galerías subterráneas, adoquines y cobertizos suspendidos. En el patio mudéjar de esta casona se oculta un auténtico <em>Miqvé</em> (baño litúrgico de purificación hebreo) excavado en la roca viva con manantial natural.
+                      </p>
+                    </div>
+
+                    <div class="trail-leg-item" style="border-left-color: #2563eb;">
+                      <div class="trail-leg-header">
+                        <span class="trail-leg-title">Parada 3: Azulejos 'Hai', Mezuzot y Llaves</span>
+                        <span class="trail-leg-dist" style="background:#dbeafe; color:#1e40af;">120 m · 2 min</span>
+                      </div>
+                      <p class="trail-leg-desc">
+                        <strong>Huellas en el suelo y jambas:</strong> Baldosas cerámicas de la Red de Juderías (mapa de Sefarad, Menorá y palabra <em>Hai</em> / Vida, de valor cabalístico 18). En las jambas derechas de portales centenarios, la hendidura vacía de la <em>Mezuzá</em> arrancada en 1492 y el recuerdo de las llaves de Sefarad.
+                      </p>
+                    </div>
+
+                    <div class="trail-leg-item" style="border-left-color: #7c3aed;">
+                      <div class="trail-leg-header">
+                        <span class="trail-leg-title">Parada 4: San Juan de Dios & Pozo Amargo</span>
+                        <span class="trail-leg-dist" style="background:#f3e8ff; color:#6b21a8;">220 m · 4 min</span>
+                      </div>
+                      <p class="trail-leg-desc">
+                        <strong>Adarves y Cobertizos:</strong> Pasadizos en el aire y callejones ciegos medievales. Junto al brocal del pozo se revive la trágica leyenda del amor prohibido entre la judía Raquel y el hidalgo cristiano Don Fernando, cuyas lágrimas amargaron las aguas para la eternidad.
+                      </p>
+                    </div>
+
+                    <div class="trail-leg-item" style="border-left-color: #c28833;">
+                      <div class="trail-leg-header">
+                        <span class="trail-leg-title">Parada 5: Calle Santo Tomé & Mazapanes</span>
+                        <span class="trail-leg-dist" style="background:#fef3c7; color:#92400e;">160 m · 3 min</span>
+                      </div>
+                      <p class="trail-leg-desc">
+                        <strong>Eje vital de la Judería:</strong> Aroma inconfundible a almendra tostada y azúcar de los obradores tradicionales de mazapán toledano. En la torre mudéjar de la Iglesia de Santo Tomé se custodia la mayor cima de El Greco: <em>El entierro del Señor de Orgaz</em>.
+                      </p>
+                    </div>
+
+                    <div class="trail-leg-item" style="border-left-color: #059669;">
+                      <div class="trail-leg-header">
+                        <span class="trail-leg-title">Parada 6: Mirador de San Cristóbal</span>
+                        <span class="trail-leg-dist" style="background:#d1fae5; color:#065f46;">210 m · 4 min (19:30 h)</span>
+                      </div>
+                      <p class="trail-leg-desc">
+                        <strong>Ascenso sereno y panorámica final:</strong> Subida por la tranquila Cuesta de San Cristóbal lejos del bullicio. Desde el pretil de piedra se contempla el mar de tejados árabes, campanarios y sinagogas recortándose contra el ocaso toledano, antes de dirigirte al tour subterráneo (20:00 h).
+                      </p>
+                    </div>
+
+                  </div>
+
+                  <!-- REPRODUCTOR DE LA AUDIOGUÍA NARRADA -->
+                  <div class="audioguide-box" style="margin-top: 24px; background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); border-radius: 12px; padding: 20px; color: #ffffff; border: 1px solid rgba(255,255,255,0.1);">
+                    <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin-bottom: 12px;">
+                      <div style="display: flex; align-items: center; gap: 12px;">
+                        <span style="font-size: 2rem;">🎧</span>
+                        <div>
+                          <h4 style="margin: 0; font-family: 'Cinzel', serif; font-size: 1.05rem; color: #fbbf24;">Audioguía Oficial: Paseo por los Rincones y Miradores de la Judería</h4>
+                          <p style="margin: 4px 0 0 0; font-size: 0.82rem; color: #94a3b8;">Narración completa (11 min 45 s) · Basada en la historia, cábala y leyendas sefardíes</p>
+                        </div>
+                      </div>
+                      <span style="background: rgba(251, 191, 36, 0.2); border: 1px solid rgba(251, 191, 36, 0.4); color: #fde68a; font-size: 0.72rem; font-weight: 800; padding: 4px 10px; border-radius: 20px;">AUDIO MP3 INCLUIDO</span>
+                    </div>
+
+                    <audio controls preload="none" style="width: 100%; margin: 8px 0 12px 0; border-radius: 8px;">
+                      <source src="../../audios/mp3/paseo-rincones-miradores-juderia.mp3" type="audio/mpeg">
+                      <source src="audios/mp3/paseo-rincones-miradores-juderia.mp3" type="audio/mpeg">
+                      Tu navegador no soporta el reproductor de audio HTML5.
+                    </audio>
+
+                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; font-size: 0.78rem; color: #94a3b8;">
+                      <span>💡 <em>Consejo:</em> Ponte los auriculares en el Mirador del Tránsito y déjate guiar paso a paso por sus adarves.</span>
+                    </div>
+                  </div>
+
+                  <!-- BOTONERA GPS DIRECTA DE LA JUDERÍA -->
+                  <div class="action-btn-group" style="margin-top: 20px;">
+                    <a href="https://www.google.com/maps/dir/?api=1&origin=Mirador+del+Paseo+del+Transito+Toledo&destination=Mirador+de+San+Cristobal+Toledo&waypoints=Casa+del+Judio+Toledo%7CCalle+San+Juan+de+Dios+Toledo%7CPlaza+del+Salvador+Toledo%7CIglesia+de+Santo+Tome+Toledo&travelmode=walking" target="_blank" class="btn-primary">🗺️ Abrir Ruta a Pie Completa de la Judería en Google Maps (850 m)</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Mirador+del+Paseo+del+Transito+Toledo" target="_blank" class="btn-secondary">🌅 GPS Mirador del Tránsito</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Casa+del+Judio+Calle+de+la+Juderia+Toledo" target="_blank" class="btn-secondary">🏛️ GPS Casa del Judío</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Callejon+del+Pozo+Amargo+Toledo" target="_blank" class="btn-secondary">🌉 GPS Pozo Amargo</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Iglesia+de+Santo+Tome+Toledo" target="_blank" class="btn-secondary">🎨 GPS Santo Tomé</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Mirador+de+San+Cristobal+Toledo" target="_blank" class="btn-secondary">🌄 GPS Mirador San Cristóbal</a>
+                  </div>
+
+                </div>
               </div>
             </div>
 
@@ -1084,6 +1306,24 @@
                 <li>
                   <a href="https://www.google.com/maps/search/?api=1&query=Sinagoga+del+Transito+Toledo" target="_blank">
                     <span>Sinagoga del Tránsito / Museo Sefardí</span>
+                    <span class="link-tag">Abrir GPS ↗</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.google.com/maps/dir/?api=1&origin=Mirador+del+Paseo+del+Transito+Toledo&destination=Mirador+de+San+Cristobal+Toledo&waypoints=Casa+del+Judio+Toledo%7CCalle+San+Juan+de+Dios+Toledo%7CPlaza+del+Salvador+Toledo%7CIglesia+de+Santo+Tome+Toledo&travelmode=walking" target="_blank">
+                    <span>Ruta a Pie Judería Mayor & Miradores (850 m)</span>
+                    <span class="link-tag">Ruta GPS ↗</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.google.com/maps/search/?api=1&query=Mirador+del+Paseo+del+Transito+Toledo" target="_blank">
+                    <span>Mirador del Paseo del Tránsito</span>
+                    <span class="link-tag">Abrir GPS ↗</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.google.com/maps/search/?api=1&query=Mirador+de+San+Cristobal+Toledo" target="_blank">
+                    <span>Mirador de San Cristóbal</span>
                     <span class="link-tag">Abrir GPS ↗</span>
                   </a>
                 </li>
