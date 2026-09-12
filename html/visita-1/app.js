@@ -83,4 +83,57 @@ document.addEventListener('DOMContentLoaded', () => {
   sections.forEach(section => {
     sectionObserver.observe(section);
   });
+
+  // ==========================================================================
+  // SINCRONIZACIÓN DE AUDIOGUÍAS INTERACTIVAS
+  // ==========================================================================
+  document.querySelectorAll('audio').forEach(audio => {
+    const btn = document.querySelector(`[data-target="${audio.id}"]`);
+    if (!btn) return;
+
+    audio.addEventListener('play', () => {
+      btn.classList.add('playing');
+      const textSpan = btn.querySelector('.audio-state-text');
+      if (textSpan) textSpan.textContent = 'Pausar';
+      const iconSpan = btn.querySelector('.audio-icon');
+      if (iconSpan) iconSpan.textContent = '⏸';
+    });
+
+    audio.addEventListener('pause', () => {
+      btn.classList.remove('playing');
+      const textSpan = btn.querySelector('.audio-state-text');
+      if (textSpan) textSpan.textContent = 'Escuchar';
+      const iconSpan = btn.querySelector('.audio-icon');
+      if (iconSpan) iconSpan.textContent = '▶';
+    });
+
+    audio.addEventListener('ended', () => {
+      btn.classList.remove('playing');
+      const textSpan = btn.querySelector('.audio-state-text');
+      if (textSpan) textSpan.textContent = 'Escuchar';
+      const iconSpan = btn.querySelector('.audio-icon');
+      if (iconSpan) iconSpan.textContent = '▶';
+    });
+  });
 });
+
+// Función global para alternar reproducción y pausar los otros audios
+window.toggleAudio = function(btn, audioId) {
+  const audio = document.getElementById(audioId);
+  if (!audio) return;
+
+  if (!audio.paused) {
+    audio.pause();
+  } else {
+    // Pausar cualquier otro audio en reproducción
+    document.querySelectorAll('audio').forEach(a => {
+      if (a !== audio && !a.paused) {
+        a.pause();
+      }
+    });
+
+    audio.play().catch(err => {
+      console.warn('Reproducción de audio bloqueada o no iniciada:', err);
+    });
+  }
+};
