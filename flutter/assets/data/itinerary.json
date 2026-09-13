@@ -107,30 +107,98 @@
         },
         {
           "id": "item-d1-5",
-          "timeSlot": "15:30 – 19:30",
-          "title": "La Judería Mayor & Joyas del Mudéjar",
-          "category": "Monumento & Audioguías",
-          "badgeText": "MONUMENTAL",
+          "timeSlot": "15:30 – 17:30",
+          "title": "Joyas del Mudéjar",
+          "category": "Patrimonio & Mudéjar",
+          "badgeText": "MUDÉJAR",
           "badgeType": "tour",
-          "duration": "4h",
-          "distance": "~1,5 km a pie",
-          "cost": "11,00 €",
+          "duration": "2h",
+          "distance": "San Juan de los Reyes & Sta. María la Blanca",
+          "cost": "8,00 €",
           "isFree": false,
-          "locationName": "Judería de Toledo",
-          "lat": 39.8572,
-          "lng": -4.0302,
-          "audioId": "audio-paseo-juderia",
-          "shortDescription": "Paseo inmersivo por el laberinto sefardí: San Juan de los Reyes (claustro gótico), Sinagoga de Santa María la Blanca, Sinagoga del Tránsito / Museo Sefardí y recorrido a pie audioguiado por miradores.",
+          "locationName": "San Juan de los Reyes & Santa María la Blanca",
+          "lat": 39.8581,
+          "lng": -4.0315,
+          "audioId": null,
+          "shortDescription": "Visita a las cumbres del gótico isabelino y el mudéjar toledano: el Monasterio de San Juan de los Reyes con su histórico claustro y la Sinagoga de Santa María la Blanca con su bosque de columnas almohades.",
           "highlights": [
-            "15:30 - Monasterio de San Juan de los Reyes (4€) · Audioguía disponible",
-            "16:30 - Sinagoga de Santa María la Blanca (4€) · Audioguía disponible",
-            "17:30 - Sinagoga del Tránsito & Museo Sefardí (3€) · Audioguía disponible",
-            "18:45 - Paseo audioguiado de 6 paradas: Miqvé, Mezuzot, Cobertizos y Mirador de San Cristóbal"
+            "15:30 - Monasterio de San Juan de los Reyes (4€ o Pulsera)",
+            "16:30 - Sinagoga de Santa María la Blanca (4€ o Pulsera)",
+            "Claustro procesional gótico con artesonado mudéjar",
+            "32 columnas y capiteles de estuco de blancura inmaculada"
           ],
-          "tips": "La entrada a los monumentos se puede pagar individualmente o mediante la Pulsera Turística toledana."
+          "tips": "Entrada individual 4€ o incluida en la Pulsera Turística toledana.",
+          "subSites": [
+            {
+              "title": "1. Monasterio de San Juan de los Reyes",
+              "timeSlot": "15:30 – 16:30",
+              "price": "Entrada: 4,00 € (o Pulsera Turística)",
+              "description": "Monumento cumbre del gótico isabelino mandado edificar por los Reyes Católicos para conmemorar la batalla de Toro y servir de panteón real. Su claustro de dos pisos con arquerías caladas, esculturas góticas y artesonado mudéjar en madera policromada es una de las mayores joyas arquitectónicas de España. En el exterior aún cuelgan las cadenas de los cautivos cristianos liberados en la toma de Granada.",
+              "audioId": "audio-san-juan-reyes",
+              "lat": 39.8581,
+              "lng": -4.0315,
+              "locationName": "Monasterio de San Juan de los Reyes"
+            },
+            {
+              "title": "2. Sinagoga de Santa María la Blanca",
+              "timeSlot": "16:30 – 17:30",
+              "price": "Entrada: 4,00 € (o Pulsera Turística)",
+              "description": "Construida a finales del siglo XII por arquitectos musulmanes para la comunidad judía toledana en estilo almohade. Posee 32 columnas poligonales que sostienen arcos de herradura y capiteles con motivos vegetales de piñas y lacerías de yeso de una blancura inmaculada. Ejemplo supremo del mestizaje de las Tres Culturas.",
+              "audioId": "audio-santa-maria-blanca",
+              "lat": 39.8572,
+              "lng": -4.0302,
+              "locationName": "Sinagoga de Santa María la Blanca"
+            }
+          ]
         },
         {
           "id": "item-d1-6",
+          "timeSlot": "17:30 – 19:30",
+          "title": "La Judería Mayor",
+          "category": "Sefarad & Miradores",
+          "badgeText": "SEFARAD",
+          "badgeType": "tour",
+          "duration": "2h",
+          "distance": "Sinagoga del Tránsito & Miradores",
+          "cost": "3,00 €",
+          "isFree": false,
+          "locationName": "Judería Mayor de Toledo",
+          "lat": 39.8558,
+          "lng": -4.0294,
+          "audioId": "audio-sinagoga-transito",
+          "shortDescription": "Inmersión en el legado sefardí: la colosal Sinagoga del Tránsito y Museo Sefardí, seguida del recorrido a pie audioguiado por los rincones, mezuzot y miradores secretos al atardecer.",
+          "highlights": [
+            "17:30 - Sinagoga del Tránsito & Museo Sefardí (3€)",
+            "18:45 - Paseo audioguiado de 6 paradas por la Judería (Gratis)",
+            "Gran Sala de Oración con artesonado de madera de cedro",
+            "Miqvé subterráneo, baldosas del Hai, cobertizos medievales y Mirador de San Cristóbal"
+          ],
+          "tips": "Entrada reducida estatal 3€. El paseo a pie por el exterior y miradores es de acceso libre y 100% gratuito.",
+          "subSites": [
+            {
+              "title": "1. Sinagoga del Tránsito & Museo Sefardí",
+              "timeSlot": "17:30 – 18:45",
+              "price": "Entrada general: 3,00 €",
+              "description": "Erigida en el siglo XIV por Samuel ha-Leví, tesorero del rey Pedro I de Castilla. Su Gran Sala de Oración cuenta con uno de los artesonados de madera de cedro más imponentes de Europa y un friso de yeserías con inscripciones en hebreo ensalzando a Dios y al Rey. Alberga el Museo Sefardí, que documenta la historia y tradiciones hispanojudías.",
+              "audioId": "audio-sinagoga-transito",
+              "lat": 39.8558,
+              "lng": -4.0294,
+              "locationName": "Sinagoga del Tránsito / Museo Sefardí"
+            },
+            {
+              "title": "2. Paseo por los Rincones y Miradores de la Judería",
+              "timeSlot": "18:45 – 19:30",
+              "price": "Acceso Libre · 100% Gratuito",
+              "description": "Un recorrido a pie concebido para caminar despacio con los ojos atentos tanto al horizonte como a las piedras milenarias y a las huellas secretas bajo tus zapatos. Siguiendo el guión de la audioguía oficial, descenderemos por el Paseo del Tránsito con vistas al cañón del río Tajo, descubriremos el Miqvé subterráneo en la Casa del Judío, rastrearemos las mezuzot y baldosas cerámicas del Hai (vida), cruzaremos los cobertizos medievales evocando la Leyenda del Pozo Amargo, nos deleitaremos con el aroma a mazapán de la Calle de Santo Tomé y culminaremos en la panorámica al atardecer del Mirador de San Cristóbal.",
+              "audioId": "audio-paseo-juderia",
+              "lat": 39.8549,
+              "lng": -4.0271,
+              "locationName": "Paseo de la Judería & Mirador de San Cristóbal"
+            }
+          ]
+        },
+        {
+          "id": "item-d1-7",
           "timeSlot": "20:00 – 21:30",
           "title": "Tour Nocturno: Toledo Subterráneo",
           "category": "Tour Guiado Especializado",

@@ -1,2 +1,26 @@
 en el día 22 quita visita matinal libre a la catedral
 tanto en la versión html como en la versión mobile
+
+para la versión mobile:
+en el día 21 la tarjeta la judería mayor & joyas del mudejar dividirla en 2
+- 1 joyas del mudejar y dentro del detalle mostrar tarjetas de los sitios a visitar con una pequeña descripción como está en la versión html de la tarjeta 
+- 2 la judería mayor y dentro del detalle mostrar tarjetas de los sitios a visitar con una pequeña descripción como está en la versión html de la tarjeta 
+mantén el botón "ver detalles" como está en otras tarjetas para la version mobile
+el botón escuchar se debe mostrar en cada tarjeta como está en otras tarjetas
+de manera individualizada para cada sitio a visitar dentro de cada detalle
+
+en OSM se puede guiar al usuario en tiempo real por las calles, como hace google maps? es posible hacerlo con flutter openstreetmaps? 
+
+
+para la versión mobile:
+en la tarjeta Joyas del Mudéjar quitar el botón "escuchar" 
+al entrar al detalle mostrar los mismos sitios que la versión html.
+cada item tendrá su boton escuchar como los demás 
+crea un bottom navigation bar : "Lista de Sitios", "Vista de Mapa"
+como está en la ventana principal
+genera el apk
+no lo instales en el adb
+dame el link de descarga para mi telefono movil
+
+
+

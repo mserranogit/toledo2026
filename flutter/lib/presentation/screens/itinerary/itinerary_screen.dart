@@ -586,71 +586,82 @@ class _TimelineCard extends ConsumerWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
-                            item.isFree ? 'Entrada Libre' : 'Coste: ${item.cost}',
-                            style: TextStyle(
-                              fontSize: 11.5,
-                              fontWeight: FontWeight.w700,
-                              color: item.isFree ? ToledoColors.badgeFreeText : ToledoColors.badgePriceText,
-                            ),
-                          ),
-
-                          // Si tiene audioguía, botón rápido
-                          if (item.audioId != null)
-                            audioListAsync.when(
-                              data: (tracks) {
-                                final track = tracks.firstWhere(
-                                  (t) => t.id == item.audioId,
-                                  orElse: () => tracks.first,
-                                );
-                                final isThisPlaying = playerState.isPlaying && playerState.currentTrack?.id == track.id;
-
-                                return InkWell(
-                                  onTap: () {
-                                    ref.read(audioPlayerProvider.notifier).playTrack(track);
-                                  },
-                                  borderRadius: BorderRadius.circular(16),
-                                  child: Container(
-                                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                                    decoration: BoxDecoration(
-                                      color: isThisPlaying ? ToledoColors.primary : ToledoColors.primaryLight,
-                                      borderRadius: BorderRadius.circular(16),
-                                      border: Border.all(color: ToledoColors.primary.withOpacity(0.3)),
-                                    ),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: [
-                                        Icon(
-                                          isThisPlaying ? Icons.pause_rounded : Icons.play_arrow_rounded,
-                                          size: 15,
-                                          color: isThisPlaying ? Colors.white : ToledoColors.primary,
-                                        ),
-                                        const SizedBox(width: 4),
-                                        Text(
-                                          isThisPlaying ? 'Pausar' : 'Escuchar',
-                                          style: TextStyle(
-                                            fontSize: 11,
-                                            fontWeight: FontWeight.w700,
-                                            color: isThisPlaying ? Colors.white : ToledoColors.primary,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                );
-                              },
-                              loading: () => const SizedBox.shrink(),
-                              error: (_, stack) => const SizedBox.shrink(),
-                            )
-                          else
-                            const Text(
-                              'Ver detalles →',
+                          Flexible(
+                            child: Text(
+                              item.isFree ? 'Entrada Libre' : 'Coste: ${item.cost}',
                               style: TextStyle(
                                 fontSize: 11.5,
-                                fontWeight: FontWeight.w600,
-                                color: ToledoColors.primary,
+                                fontWeight: FontWeight.w700,
+                                color: item.isFree ? ToledoColors.badgeFreeText : ToledoColors.badgePriceText,
                               ),
+                              overflow: TextOverflow.ellipsis,
                             ),
+                          ),
+                          const SizedBox(width: 8),
+
+                          Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              // Si tiene audioguía, botón rápido
+                              if (item.audioId != null) ...[
+                                audioListAsync.when(
+                                  data: (tracks) {
+                                    final track = tracks.firstWhere(
+                                      (t) => t.id == item.audioId,
+                                      orElse: () => tracks.first,
+                                    );
+                                    final isThisPlaying = playerState.isPlaying && playerState.currentTrack?.id == track.id;
+
+                                    return InkWell(
+                                      onTap: () {
+                                        ref.read(audioPlayerProvider.notifier).playTrack(track);
+                                      },
+                                      borderRadius: BorderRadius.circular(16),
+                                      child: Container(
+                                        padding: const EdgeInsets.symmetric(horizontal: 9, vertical: 4.5),
+                                        decoration: BoxDecoration(
+                                          color: isThisPlaying ? ToledoColors.primary : ToledoColors.primaryLight,
+                                          borderRadius: BorderRadius.circular(16),
+                                          border: Border.all(color: ToledoColors.primary.withOpacity(0.3)),
+                                        ),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            Icon(
+                                              isThisPlaying ? Icons.pause_rounded : Icons.play_arrow_rounded,
+                                              size: 14,
+                                              color: isThisPlaying ? Colors.white : ToledoColors.primary,
+                                            ),
+                                            const SizedBox(width: 4),
+                                            Text(
+                                              isThisPlaying ? 'Pausar' : 'Escuchar',
+                                              style: TextStyle(
+                                                fontSize: 11,
+                                                fontWeight: FontWeight.w700,
+                                                color: isThisPlaying ? Colors.white : ToledoColors.primary,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    );
+                                  },
+                                  loading: () => const SizedBox.shrink(),
+                                  error: (_, stack) => const SizedBox.shrink(),
+                                ),
+                                const SizedBox(width: 8),
+                              ],
+
+                              const Text(
+                                'Ver detalles →',
+                                style: TextStyle(
+                                  fontSize: 11.5,
+                                  fontWeight: FontWeight.w600,
+                                  color: ToledoColors.primary,
+                                ),
+                              ),
+                            ],
+                          ),
                         ],
                       ),
                     ],
