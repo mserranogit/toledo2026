@@ -69,7 +69,7 @@ class ItineraryScreen extends ConsumerWidget {
                       ),
                       const SizedBox(height: 4),
                       Text(
-                        'Historia, senderos, misterio y arqueología visigoda a tu propio ritmo.',
+                        'Historia, misterios, patrimonio y gastronomía toledana a tu ritmo.',
                         style: GoogleFonts.plusJakartaSans(
                           fontSize: 13,
                           color: ToledoColors.textLight,
@@ -90,7 +90,7 @@ class ItineraryScreen extends ConsumerWidget {
                             Expanded(
                               child: _DayTabButton(
                                 title: 'Día 1 · Miér 21',
-                                subtitle: 'Senderos & Judería',
+                                subtitle: 'Consorcio & Judería',
                                 isSelected: selectedDay == 1,
                                 onTap: () => ref.read(selectedDayIndexProvider.notifier).state = 1,
                               ),

@@ -5,6 +5,7 @@ import '../../core/theme/toledo_colors.dart';
 import '../widgets/persistent_mini_player.dart';
 import 'itinerary/itinerary_screen.dart';
 import 'map/osm_map_screen.dart';
+import 'restaurants/restaurants_screen.dart';
 import 'audio/audioguides_screen.dart';
 import 'budget/budget_screen.dart';
 
@@ -20,6 +21,7 @@ class MainShell extends ConsumerWidget {
     final screens = const [
       ItineraryScreen(),
       OsmMapScreen(),
+      RestaurantsScreen(),
       AudioguidesScreen(),
       BudgetScreen(),
     ];
@@ -91,6 +93,11 @@ class MainShell extends ConsumerWidget {
             icon: Icon(Icons.map_outlined),
             activeIcon: Icon(Icons.map),
             label: 'Mapas OSM',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.restaurant_outlined),
+            activeIcon: Icon(Icons.restaurant),
+            label: 'Restaurantes',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.headphones_outlined),

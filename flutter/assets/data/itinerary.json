@@ -4,35 +4,60 @@
       "id": "dia-1",
       "dayNumber": 1,
       "dateFormatted": "Miércoles, 21 de Octubre 2026",
-      "title": "Senderismo, Conventos Secretos y Misterios Subterráneos",
-      "summary": "Inicio panorámico en los riscos del Tajo, clausura del Consorcio, almuerzo tradicional, joyas de la Judería y paseo subterráneo nocturno.",
+      "title": "Llegada, Rutas del Consorcio, Gastronomía y Misterios Subterráneos",
+      "summary": "Llegada al Parking Safont, Centro de Gestión de Recursos Culturales, conventos de clausura, selección de restaurantes baratos (12€–15€), Judería Mayor y tour nocturno subterráneo.",
       "items": [
         {
           "id": "item-d1-1",
-          "timeSlot": "08:30 – 10:45",
-          "title": "Circuito Ermita del Valle: Peña del Rey Moro & Cerro del Bú",
-          "category": "Naturaleza & Senderismo",
+          "timeSlot": "10:00 – 10:30",
+          "title": "Llegada al Parking Safont & Escaleras Mecánicas",
+          "category": "Aparcamiento & Acceso",
           "badgeText": "GRATUITO",
           "badgeType": "free",
-          "duration": "2h 15m",
-          "distance": "~1.280 m a pie",
+          "duration": "30 min",
+          "distance": "Parking Safont · Escaleras Miradero",
           "cost": "0,00 €",
           "isFree": true,
-          "locationName": "Ermita del Valle",
-          "lat": 39.8516,
-          "lng": -4.0178,
+          "locationName": "Parking Gratuito de Safont",
+          "lat": 39.8628,
+          "lng": -4.0189,
           "audioId": null,
-          "shortDescription": "Paseo circular desde la Ermita del Valle hacia la Peña del Rey Moro (escalones de roca) y el yacimiento de la Edad del Bronce del Cerro del Bú, con vistas espectaculares del Alcázar y el río encajonado.",
+          "shortDescription": "Llegada a las 10:00 h al aparcamiento disuasorio oficial junto al río Tajo (+1.000 plazas, gratuito 24/7). Ubicado fuera de las cámaras de la ZBE para evitar multas de tráfico. Conexión peatonal directa en 2 min mediante las Escaleras Mecánicas de Safont hasta el Paseo del Miradero.",
           "highlights": [
-            "Parking libre junto a la Ermita del Valle (inicio del circuito)",
-            "Tramo 1: Ermita a Peña del Rey Moro (180 m · escalinata en roca viva)",
-            "Tramo 2: Peña a Cerro del Bú (450 m · sendero entre jaras)",
-            "Tramo 3: Cerro del Bú de vuelta al parking (650 m · panorámica frontal)"
+            "Llegada en coche a las 10:00 h a Ronda de Juanelo",
+            "Estacionamiento gratuito 24/7, vigilado e iluminado",
+            "Escaleras mecánicas gratuitas: Salvan 50 metros de desnivel en 2 min",
+            "Evita sanciones automáticas de la Zona de Bajas Emisiones (ZBE)"
           ],
-          "tips": "Llevar calzado deportivo con suela de buen agarre. La peña tiene escalones tallados en roca viva."
+          "tips": "No intentes entrar en coche al casco histórico. Aparca en Safont y sube por las escaleras mecánicas."
         },
         {
           "id": "item-d1-2",
+          "timeSlot": "10:30 – 11:00",
+          "title": "Centro de Gestión de Recursos Culturales",
+          "category": "Patrimonio Consorcio",
+          "badgeText": "VISITAS GRATUITAS",
+          "badgeType": "free",
+          "duration": "30 min",
+          "distance": "850 m a pie desde Safont (12 min)",
+          "cost": "0,00 €",
+          "isFree": true,
+          "locationName": "Plaza Amador de los Ríos, Toledo",
+          "lat": 39.8587,
+          "lng": -4.0252,
+          "audioId": null,
+          "shortDescription": "Oficina oficial del Consorcio de Toledo para gestionar e iniciar las visitas guiadas gratuitas del programa Patrimonio Desconocido. En el subsuelo de la plaza se ubican los restos arqueológicos de las Termas Romanas de Amador de los Ríos (siglos I-II d.C.).",
+          "highlights": [
+            "Llegada a pie a las 10:30 h tras paseo llano por Zocodover y Martín Gamero",
+            "Dirección: Plaza Amador de los Ríos, Toledo",
+            "Teléfono: 925 25 30 80 (M-S: 10:00 a 14:00, 16:00 a 20:00)",
+            "Punto de información y salida para las visitas guiadas gratuitas",
+            "Enlace a pie de 4 min (300 m) hacia Santo Domingo El Real a las 11:00 h"
+          ],
+          "tips": "Confirmar y acreditar aquí las reservas para la ruta guiada gratuita de los conventos."
+        },
+        {
+          "id": "item-d1-3",
           "timeSlot": "11:00 – 13:30",
           "title": "Conventos del Consorcio: Santo Domingo El Real y Comendadoras",
           "category": "Patrimonio Exclusivo",
@@ -53,33 +78,35 @@
             "Comendadoras de Santiago: zócalos de azulejería y Claustro de los Laureles",
             "Posibilidad de comprar dulces conventuales artesanos en el torno"
           ],
-          "tips": "Se recomienda reservar previamente en la web del Consorcio de Toledo para garantizar plaza."
-        },
-        {
-          "id": "item-d1-3",
-          "timeSlot": "13:30 – 15:30",
-          "title": "Almuerzo Toledano Tradicional",
-          "category": "Gastronomía",
-          "badgeText": "< 20€ / MENÚ",
-          "badgeType": "price",
-          "duration": "2h",
-          "distance": "Cerca de Zocodover",
-          "cost": "15,00 €",
-          "isFree": false,
-          "locationName": "Bar Ludeña / Cuchara de Palo",
-          "lat": 39.8596,
-          "lng": -4.0224,
-          "audioId": null,
-          "shortDescription": "Degustación de la cocina típica toledana en el mítico Bar Ludeña (creadores de las famosas carcamusas toledanas) o Cuchara de Palo, manteniendo el presupuesto ajustado bajo 20€ por comensal.",
-          "highlights": [
-            "Plato estrella: Carcamusas toledanas con salsa de tomate picante y guisantes",
-            "Vino de la Mancha o cerveza artesana toledana Domus",
-            "Ubicación óptima entre la ruta matinal y la Judería de la tarde"
-          ],
-          "tips": "Llegar sobre las 13:30 para asegurar mesa sin esperas en el interior."
+          "tips": "Punto de inicio en la vecina Plaza de Santo Domingo El Real, a solo 300 m de Plaza Amador de los Ríos."
         },
         {
           "id": "item-d1-4",
+          "timeSlot": "13:30 – 15:30",
+          "title": "Dónde Comer Barato en Toledo (Menús 12€ – 15€)",
+          "category": "Gastronomía",
+          "badgeText": "12€ – 15€ / MENÚ",
+          "badgeType": "price",
+          "duration": "2h",
+          "distance": "Casco Histórico & Alrededores",
+          "cost": "15,00 €",
+          "isFree": false,
+          "locationName": "La Maruja / El Telón / Ave Fénix / El Trébol",
+          "lat": 39.8568,
+          "lng": -4.0298,
+          "audioId": null,
+          "shortDescription": "Selección verificada in situ según la guía La Maleta Inquieta 2026: restaurantes auténticos con menú de 12€ a 15€ sin trampas para turistas: La Maruja (patio en Judería), El Telón (Santa Bárbara, 12€), Ave Fénix (universidad, carcamusas) y Cervecería El Trébol (tapeo en alcazaba islámica), más el mítico Bar Ludeña.",
+          "highlights": [
+            "La Maruja (15€): Menú con patio interior cubierto en plena Judería (C/ Cortes 1)",
+            "El Telón (12€–15€): El menú más barato, cocina casera de barrio (Av. Santa Bárbara 2)",
+            "Ave Fénix (15€): Carcamusas toledanas y solomillo en salsa (C/ Alfonso X 2)",
+            "Cervecería El Trébol (~15€): Tapeo y bomba del Trébol dentro de la alcazaba islámica (C/ Santa Fe 1)",
+            "Bar Ludeña (12€–16€): Cuna donde se inventaron las carcamusas (Plaza de la Magdalena 10)"
+          ],
+          "tips": "5 Reglas de oro: Aléjate 200 m de Zocodover, evita cartas plastificadas con fotos, pide menú del día (ahorro 8€-12€), sube cuestas y come temprano (13:30 h)."
+        },
+        {
+          "id": "item-d1-5",
           "timeSlot": "15:30 – 19:30",
           "title": "La Judería Mayor & Joyas del Mudéjar",
           "category": "Monumento & Audioguías",
@@ -103,7 +130,7 @@
           "tips": "La entrada a los monumentos se puede pagar individualmente o mediante la Pulsera Turística toledana."
         },
         {
-          "id": "item-d1-5",
+          "id": "item-d1-6",
           "timeSlot": "20:00 – 21:30",
           "title": "Tour Nocturno: Toledo Subterráneo",
           "category": "Tour Guiado Especializado",

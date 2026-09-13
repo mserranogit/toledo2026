@@ -7,5 +7,21 @@ final mapPointsDataProvider = FutureProvider<MapPointsDataModel>((ref) async {
   return dataSource.getMapPointsData();
 });
 
-// Ruta seleccionada actualmente (0: Sendero del Valle, 1: Judería Mayor, -1: Todos los puntos)
+// Ruta seleccionada actualmente (0: Llegada Safont ➔ Centro, 1: Judería Mayor, 2: Restaurantes Baratos, -1: Todos los puntos)
 final selectedMapRouteIndexProvider = StateProvider<int>((ref) => 0);
+
+class MapCenterTarget {
+  final double lat;
+  final double lng;
+  final double zoom;
+  final String? title;
+
+  const MapCenterTarget({
+    required this.lat,
+    required this.lng,
+    this.zoom = 16.5,
+    this.title,
+  });
+}
+
+final mapCenterTargetProvider = StateProvider<MapCenterTarget?>((ref) => null);

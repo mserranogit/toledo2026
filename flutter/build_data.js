@@ -109,35 +109,60 @@ const itinerary = {
       id: 'dia-1',
       dayNumber: 1,
       dateFormatted: 'Miércoles, 21 de Octubre 2026',
-      title: 'Senderismo, Conventos Secretos y Misterios Subterráneos',
-      summary: 'Inicio panorámico en los riscos del Tajo, clausura del Consorcio, almuerzo tradicional, joyas de la Judería y paseo subterráneo nocturno.',
+      title: 'Llegada, Rutas del Consorcio, Gastronomía y Misterios Subterráneos',
+      summary: 'Llegada al Parking Safont, Centro de Gestión de Recursos Culturales, conventos de clausura, selección de restaurantes baratos (12€–15€), Judería Mayor y tour nocturno subterráneo.',
       items: [
         {
           id: 'item-d1-1',
-          timeSlot: '08:30 – 10:45',
-          title: 'Circuito Ermita del Valle: Peña del Rey Moro & Cerro del Bú',
-          category: 'Naturaleza & Senderismo',
+          timeSlot: '10:00 – 10:30',
+          title: 'Llegada al Parking Safont & Escaleras Mecánicas',
+          category: 'Aparcamiento & Acceso',
           badgeText: 'GRATUITO',
           badgeType: 'free',
-          duration: '2h 15m',
-          distance: '~1.280 m a pie',
+          duration: '30 min',
+          distance: 'Parking Safont · Escaleras Miradero',
           cost: '0,00 €',
           isFree: true,
-          locationName: 'Ermita del Valle',
-          lat: 39.8516,
-          lng: -4.0178,
+          locationName: 'Parking Gratuito de Safont',
+          lat: 39.8628,
+          lng: -4.0189,
           audioId: null,
-          shortDescription: 'Paseo circular desde la Ermita del Valle hacia la Peña del Rey Moro (escalones de roca) y el yacimiento de la Edad del Bronce del Cerro del Bú, con vistas espectaculares del Alcázar y el río encajonado.',
+          shortDescription: 'Llegada a las 10:00 h al aparcamiento disuasorio oficial junto al río Tajo (+1.000 plazas, gratuito 24/7). Ubicado fuera de las cámaras de la ZBE para evitar multas de tráfico. Conexión peatonal directa en 2 min mediante las Escaleras Mecánicas de Safont hasta el Paseo del Miradero.',
           highlights: [
-            'Parking libre junto a la Ermita del Valle (inicio del circuito)',
-            'Tramo 1: Ermita a Peña del Rey Moro (180 m · escalinata en roca viva)',
-            'Tramo 2: Peña a Cerro del Bú (450 m · sendero entre jaras)',
-            'Tramo 3: Cerro del Bú de vuelta al parking (650 m · panorámica frontal)'
+            'Llegada en coche a las 10:00 h a Ronda de Juanelo',
+            'Estacionamiento gratuito 24/7, vigilado e iluminado',
+            'Escaleras mecánicas gratuitas: Salvan 50 metros de desnivel en 2 min',
+            'Evita sanciones automáticas de la Zona de Bajas Emisiones (ZBE)'
           ],
-          tips: 'Llevar calzado deportivo con suela de buen agarre. La peña tiene escalones tallados en roca viva.'
+          tips: 'No intentes entrar en coche al casco histórico. Aparca en Safont y sube por las escaleras mecánicas.'
         },
         {
           id: 'item-d1-2',
+          timeSlot: '10:30 – 11:00',
+          title: 'Centro de Gestión de Recursos Culturales',
+          category: 'Patrimonio Consorcio',
+          badgeText: 'VISITAS GRATUITAS',
+          badgeType: 'free',
+          duration: '30 min',
+          distance: '850 m a pie desde Safont (12 min)',
+          cost: '0,00 €',
+          isFree: true,
+          locationName: 'Plaza Amador de los Ríos, Toledo',
+          lat: 39.8587,
+          lng: -4.0252,
+          audioId: null,
+          shortDescription: 'Oficina oficial del Consorcio de Toledo para gestionar e iniciar las visitas guiadas gratuitas del programa Patrimonio Desconocido. En el subsuelo de la plaza se ubican los restos arqueológicos de las Termas Romanas de Amador de los Ríos (siglos I-II d.C.).',
+          highlights: [
+            'Llegada a pie a las 10:30 h tras paseo llano por Zocodover y Martín Gamero',
+            'Dirección: Plaza Amador de los Ríos, Toledo',
+            'Teléfono: 925 25 30 80 (M-S: 10:00 a 14:00, 16:00 a 20:00)',
+            'Punto de información y salida para las visitas guiadas gratuitas',
+            'Enlace a pie de 4 min (300 m) hacia Santo Domingo El Real a las 11:00 h'
+          ],
+          tips: 'Confirmar y acreditar aquí las reservas para la ruta guiada gratuita de los conventos.'
+        },
+        {
+          id: 'item-d1-3',
           timeSlot: '11:00 – 13:30',
           title: 'Conventos del Consorcio: Santo Domingo El Real y Comendadoras',
           category: 'Patrimonio Exclusivo',
@@ -158,33 +183,35 @@ const itinerary = {
             'Comendadoras de Santiago: zócalos de azulejería y Claustro de los Laureles',
             'Posibilidad de comprar dulces conventuales artesanos en el torno'
           ],
-          tips: 'Se recomienda reservar previamente en la web del Consorcio de Toledo para garantizar plaza.'
-        },
-        {
-          id: 'item-d1-3',
-          timeSlot: '13:30 – 15:30',
-          title: 'Almuerzo Toledano Tradicional',
-          category: 'Gastronomía',
-          badgeText: '< 20€ / MENÚ',
-          badgeType: 'price',
-          duration: '2h',
-          distance: 'Cerca de Zocodover',
-          cost: '15,00 €',
-          isFree: false,
-          locationName: 'Bar Ludeña / Cuchara de Palo',
-          lat: 39.8596,
-          lng: -4.0224,
-          audioId: null,
-          shortDescription: 'Degustación de la cocina típica toledana en el mítico Bar Ludeña (creadores de las famosas carcamusas toledanas) o Cuchara de Palo, manteniendo el presupuesto ajustado bajo 20€ por comensal.',
-          highlights: [
-            'Plato estrella: Carcamusas toledanas con salsa de tomate picante y guisantes',
-            'Vino de la Mancha o cerveza artesana toledana Domus',
-            'Ubicación óptima entre la ruta matinal y la Judería de la tarde'
-          ],
-          tips: 'Llegar sobre las 13:30 para asegurar mesa sin esperas en el interior.'
+          tips: 'Punto de inicio en la vecina Plaza de Santo Domingo El Real, a solo 300 m de Plaza Amador de los Ríos.'
         },
         {
           id: 'item-d1-4',
+          timeSlot: '13:30 – 15:30',
+          title: 'Dónde Comer Barato en Toledo (Menús 12€ – 15€)',
+          category: 'Gastronomía',
+          badgeText: '12€ – 15€ / MENÚ',
+          badgeType: 'price',
+          duration: '2h',
+          distance: 'Casco Histórico & Alrededores',
+          cost: '15,00 €',
+          isFree: false,
+          locationName: 'La Maruja / El Telón / Ave Fénix / El Trébol',
+          lat: 39.8568,
+          lng: -4.0298,
+          audioId: null,
+          shortDescription: 'Selección verificada in situ según la guía La Maleta Inquieta 2026: restaurantes auténticos con menú de 12€ a 15€ sin trampas para turistas: La Maruja (patio en Judería), El Telón (Santa Bárbara, 12€), Ave Fénix (universidad, carcamusas) y Cervecería El Trébol (tapeo en alcazaba islámica), más el mítico Bar Ludeña.',
+          highlights: [
+            'La Maruja (15€): Menú con patio interior cubierto en plena Judería (C/ Cortes 1)',
+            'El Telón (12€–15€): El menú más barato, cocina casera de barrio (Av. Santa Bárbara 2)',
+            'Ave Fénix (15€): Carcamusas toledanas y solomillo en salsa (C/ Alfonso X 2)',
+            'Cervecería El Trébol (~15€): Tapeo y bomba del Trébol dentro de la alcazaba islámica (C/ Santa Fe 1)',
+            'Bar Ludeña (12€–16€): Cuna donde se inventaron las carcamusas (Plaza de la Magdalena 10)'
+          ],
+          tips: '5 Reglas de oro: Aléjate 200 m de Zocodover, evita cartas plastificadas con fotos, pide menú del día (ahorro 8€-12€), sube cuestas y come temprano (13:30 h).'
+        },
+        {
+          id: 'item-d1-5',
           timeSlot: '15:30 – 19:30',
           title: 'La Judería Mayor & Joyas del Mudéjar',
           category: 'Monumento & Audioguías',
@@ -208,7 +235,7 @@ const itinerary = {
           tips: 'La entrada a los monumentos se puede pagar individualmente o mediante la Pulsera Turística toledana.'
         },
         {
-          id: 'item-d1-5',
+          id: 'item-d1-6',
           timeSlot: '20:00 – 21:30',
           title: 'Tour Nocturno: Toledo Subterráneo',
           category: 'Tour Guiado Especializado',
@@ -350,12 +377,12 @@ const budget = {
     {
       id: 'b-1',
       day: 'Día 1 Mañana',
-      concept: 'Cerro del Bú + Mirador del Valle',
-      category: 'Senderismo',
+      concept: 'Parking Safont & Centro de Recursos Culturales',
+      category: 'Transporte & Cultura',
       priceOfficial: 0.00,
       priceActual: 0.00,
       isFree: true,
-      notes: 'Ruta de senderismo libre'
+      notes: 'Parking gratuito 24/7 y gestión de rutas del Consorcio'
     },
     {
       id: 'b-2',
@@ -370,12 +397,12 @@ const budget = {
     {
       id: 'b-3',
       day: 'Día 1 Almuerzo',
-      concept: 'Menú tradicional Bar Ludeña / Cuchara de Palo',
+      concept: 'Restaurantes Baratos Toledo (La Maleta Inquieta)',
       category: 'Gastronomía',
       priceOfficial: 15.00,
       priceActual: 15.00,
       isFree: false,
-      notes: 'Carcamusas y menú tradicional < 20€'
+      notes: 'Menú del día 12€–15€ (La Maruja, El Telón, Ave Fénix, El Trébol)'
     },
     {
       id: 'b-4',
@@ -482,20 +509,113 @@ const budget = {
 
 fs.writeFileSync(path.join(flutterDataDir, 'budget.json'), JSON.stringify(budget, null, 2), 'utf8');
 
-// 4. GENERATE map_points.json
+// 4. GENERATE restaurants.json
+const restaurantsData = {
+  tips: [
+    { number: 1, title: 'Aléjate 200 metros de Zocodover', desc: 'Basta separarse 200 m del eje Zocodover–Plaza Mayor para que el precio del menú baje de 5 € a 10 € por persona.' },
+    { number: 2, title: 'Evita cartas plastificadas con fotos en 4 idiomas', desc: 'Señal infalible de comida congelada pensada para turistas con sobreprecio.' },
+    { number: 3, title: 'Pide siempre el Menú del Día', desc: 'En España y en Toledo, el menú del día ahorra de 8 € a 12 € por persona respecto a pedir a la carta.' },
+    { number: 4, title: 'Sube las cuestas para bajar los precios', desc: 'Las zonas altas del casco histórico (universidad, San Pedro Mártir) tienen precios de toledanos.' },
+    { number: 5, title: 'Come temprano (13:30 h)', desc: 'Llegar a las 13:30 h garantiza mesa sin colas y tener disponibles todas las opciones de la pizarra antes de que se agoten.' }
+  ],
+  typicalDishes: [
+    { name: 'Las Carcamusas', desc: 'Guiso toledano de magro de cerdo con tomate casero, guisantes, jamón y toque picante en cazuela de barro.' },
+    { name: 'La Sopa Castellana', desc: 'Caldo reconfortante de pan de pueblo, ajo dorado, pimentón de la Vera y huevo escalfado.' },
+    { name: 'Judías con Perdiz', desc: 'Guiso estrella de caza menor de los Montes de Toledo con alubias tiernas.' },
+    { name: 'Vino D.O. Méntrida', desc: 'Tinto autóctono de la provincia incluido frecuentemente en el menú del día sin suplemento.' }
+  ],
+  restaurants: [
+    {
+      id: 'la-maruja',
+      name: 'La Maruja',
+      badge: 'PATIO INTERIOR · JUDERÍA',
+      price: '15,00 €',
+      priceCategory: '15€ Menú Completo',
+      address: 'Calle Cortes, 1, 45002 Toledo',
+      zone: 'Judería Mayor (a 5 min de San Juan de los Reyes)',
+      type: 'Comida Tradicional Toledana',
+      lat: 39.8568,
+      lng: -4.0298,
+      description: 'Restaurante tradicional con un precioso patio interior cubierto, íntimo y fresco. Menú casero con guisos castellanos, pollo en pepitoria, carcamusas y postre casero. Precio local en plena Judería.',
+      tip: 'Reservar con antelación en festivos o fines de semana.'
+    },
+    {
+      id: 'el-telon',
+      name: 'El Telón',
+      badge: 'EL MÁS BARATO · SANTA BÁRBARA',
+      price: '12,00 € – 15,00 €',
+      priceCategory: '12€–15€ Menú Casero',
+      address: 'Av. de Santa Bárbara, 2, 45006 Toledo',
+      zone: 'Barrio Santa Bárbara (a 12 min de Zocodover)',
+      type: 'Casa de Comidas de Barrio',
+      lat: 39.8637,
+      lng: -4.0135,
+      description: 'Auténtica casa de comidas de toda la vida fuera del circuito turístico. 80% clientela local (vecinos, profesores y funcionarios). Platos de cuchara diarios, pan de obrador del barrio y raciones donde "te sobra postre".',
+      tip: 'Llegar antes de las 14:00 h; a las 14:30 h suele llenarse.'
+    },
+    {
+      id: 'ave-fenix',
+      name: 'Ave Fénix',
+      badge: 'ZONA UNIVERSITARIA · CARCAMUSAS',
+      price: '15,00 €',
+      priceCategory: '15€ Menú Completo',
+      address: 'Calle Alfonso X el Sabio, 2, 45002 Toledo',
+      zone: 'Campus San Pedro Mártir (a 8 min de Zocodover)',
+      type: 'Tradicional & Universitarios',
+      lat: 39.8589,
+      lng: -4.0264,
+      description: 'Restaurante universitario con uno de los menús más económicos del casco alto. Especialistas en carcamusas toledanas caseras y solomillo en salsa, con primeros generosos como sopa castellana o ensaladas.',
+      tip: 'Pedir las carcamusas al centro para compartir y el solomillo como segundo individual.'
+    },
+    {
+      id: 'el-trebol',
+      name: 'Cervecería El Trébol',
+      badge: 'ALCAZABA ISLÁMICA S. X · TAPEO',
+      price: '~15,00 €',
+      priceCategory: '~15€ Tapeo con Cañas',
+      address: 'Calle de Santa Fe, 1, 45001 Toledo',
+      zone: 'Junto a Zocodover y Alcázar',
+      type: 'Tasca Histórica de Tapeo',
+      lat: 39.8598,
+      lng: -4.0211,
+      description: 'Cervecería histórica situada en la antigua alcazaba islámica del siglo X con muros de piedra originales. Ideal para tapear: la célebre Bomba del Trébol (patata rellena de carne con salsas), patatas bravas, morteruelo y carcamusas.',
+      tip: 'Pedir mesa o taburete en la zona del muro de piedra islámico.'
+    },
+    {
+      id: 'bar-ludena',
+      name: 'Bar Ludeña',
+      badge: 'CUNA DE LAS CARCAMUSAS',
+      price: '12,00 € – 16,00 €',
+      priceCategory: '12€–16€ Menú / Raciones',
+      address: 'Plaza de la Magdalena, 10, 45001 Toledo',
+      zone: 'Plaza de la Magdalena (a 2 min de Zocodover)',
+      type: 'Taberna Histórica Centenaria',
+      lat: 39.8596,
+      lng: -4.0224,
+      description: 'La gran institución toledana donde D. José Ludeña inventó las carcamusas en los años 50. Cazuelas de barro con magro de cerdo, jamón, guisantes y salsa picante, acompañadas de pan candeal.',
+      tip: 'Plato obligado: Cazuela de carcamusas caseras con vino de la casa.'
+    }
+  ]
+};
+
+fs.writeFileSync(path.join(flutterDataDir, 'restaurants.json'), JSON.stringify(restaurantsData, null, 2), 'utf8');
+
+// 5. GENERATE map_points.json
 const mapPoints = {
   routes: [
     {
-      id: 'route-valle',
-      title: 'Sendero del Valle: Peña del Rey Moro & Cerro del Bú',
-      color: '#852221',
-      distance: '1,28 km',
-      time: '45 min - 1 h',
+      id: 'route-llegada',
+      title: 'Llegada: Parking Safont ➔ Escaleras Miradero ➔ Plaza Amador de los Ríos',
+      color: '#0284C7',
+      distance: '850 m',
+      time: '15 min',
       points: [
-        { lat: 39.8516, lng: -4.0178, title: 'Parking Ermita del Valle', type: 'parking' },
-        { lat: 39.8524, lng: -4.0201, title: 'Peña del Rey Moro', type: 'mirador' },
-        { lat: 39.8532, lng: -4.0163, title: 'Yacimiento Cerro del Bú', type: 'monument' },
-        { lat: 39.8516, lng: -4.0178, title: 'Regreso Ermita del Valle', type: 'parking' }
+        { lat: 39.8628, lng: -4.0189, title: '1. Parking Safont (10:00 h)', type: 'parking' },
+        { lat: 39.8606, lng: -4.0217, title: '2. Escaleras Mecánicas Safont', type: 'access' },
+        { lat: 39.8601, lng: -4.0219, title: '3. Salida Miradero', type: 'mirador' },
+        { lat: 39.8595, lng: -4.0215, title: '4. Plaza de Zocodover', type: 'monument' },
+        { lat: 39.8587, lng: -4.0252, title: '5. C. Recursos Culturales (10:30 h)', type: 'monument' },
+        { lat: 39.8603, lng: -4.0275, title: '6. Convento Sto. Domingo (11:00 h)', type: 'church' }
       ]
     },
     {
@@ -515,17 +635,23 @@ const mapPoints = {
     }
   ],
   landmarks: [
-    { id: 'safont', title: 'Parking Gratuito Safont', category: 'Parking', lat: 39.8628, lng: -4.0189, icon: 'local_parking' },
+    { id: 'safont', title: 'Parking Gratuito Safont (Llegada 10:00 h)', category: 'Parking', lat: 39.8628, lng: -4.0189, icon: 'local_parking' },
     { id: 'escaleras', title: 'Escaleras Mecánicas del Miradero', category: 'Acceso', lat: 39.8606, lng: -4.0217, icon: 'escalator' },
+    { id: 'centro-recursos', title: 'Centro Gestión Recursos Culturales (10:30 h)', category: 'Cultura', lat: 39.8587, lng: -4.0252, icon: 'account_balance' },
     { id: 'hotel', title: 'Casa de la Mezquita (Alojamiento)', category: 'Alojamiento', lat: 39.8598, lng: -4.0242, icon: 'hotel' },
     { id: 'zocodover', title: 'Plaza de Zocodover', category: 'Centro', lat: 39.8595, lng: -4.0215, icon: 'place' },
     { id: 'catedral', title: 'Catedral Primada de Toledo', category: 'Monumento', lat: 39.8571, lng: -4.0238, icon: 'church' },
+    { id: 'santo-domingo', title: 'Convento Santo Domingo El Real', category: 'Monumento', lat: 39.8603, lng: -4.0275, icon: 'church' },
+    { id: 'comendadoras', title: 'Convento Comendadoras de Santiago', category: 'Monumento', lat: 39.8609, lng: -4.0268, icon: 'church' },
     { id: 'san-juan-reyes', title: 'Monasterio San Juan de los Reyes', category: 'Monumento', lat: 39.8581, lng: -4.0315, icon: 'fort' },
     { id: 'santa-maria-blanca', title: 'Sinagoga Santa María la Blanca', category: 'Monumento', lat: 39.8572, lng: -4.0302, icon: 'temple_hindu' },
     { id: 'transito', title: 'Sinagoga del Tránsito / Museo Sefardí', category: 'Monumento', lat: 39.8558, lng: -4.0294, icon: 'museum' },
-    { id: 'santo-domingo', title: 'Convento Santo Domingo El Real', category: 'Monumento', lat: 39.8603, lng: -4.0275, icon: 'church' },
-    { id: 'comendadoras', title: 'Convento Comendadoras de Santiago', category: 'Monumento', lat: 39.8609, lng: -4.0268, icon: 'church' },
     { id: 'rutas-toledo', title: 'Punto Salida: Toledo Subterráneo', category: 'Tour', lat: 39.8569, lng: -4.0228, icon: 'explore' },
+    { id: 'resto-maruja', title: 'Restaurante La Maruja (Menú 15€ · Patio Judería)', category: 'Restaurante', lat: 39.8568, lng: -4.0298, icon: 'restaurant' },
+    { id: 'resto-telon', title: 'Restaurante El Telón (Menú 12€-15€ · Santa Bárbara)', category: 'Restaurante', lat: 39.8637, lng: -4.0135, icon: 'restaurant' },
+    { id: 'resto-avefenix', title: 'Restaurante Ave Fénix (Menú 15€ · Alfonso X)', category: 'Restaurante', lat: 39.8589, lng: -4.0264, icon: 'restaurant' },
+    { id: 'resto-trebol', title: 'Cervecería El Trébol (Tapeo ~15€ · Alcazaba)', category: 'Restaurante', lat: 39.8598, lng: -4.0211, icon: 'restaurant' },
+    { id: 'resto-ludena', title: 'Bar Ludeña (Cuna de las Carcamusas)', category: 'Restaurante', lat: 39.8596, lng: -4.0224, icon: 'restaurant' },
     { id: 'castillo-orgaz', title: 'Castillo y Villa de Orgaz', category: 'Excursión', lat: 39.6482, lng: -3.8751, icon: 'castle' },
     { id: 'arisgotas', title: 'Museo de Arte Visigodo Arisgotas', category: 'Excursión', lat: 39.6136, lng: -3.8864, icon: 'museum' },
     { id: 'los-hitos', title: 'Yacimiento Arqueológico Los Hitos', category: 'Arqueología', lat: 39.6054, lng: -3.8927, icon: 'account_balance' }

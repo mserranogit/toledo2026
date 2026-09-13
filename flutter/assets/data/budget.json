@@ -7,12 +7,12 @@
     {
       "id": "b-1",
       "day": "Día 1 Mañana",
-      "concept": "Cerro del Bú + Mirador del Valle",
-      "category": "Senderismo",
+      "concept": "Parking Safont & Centro de Recursos Culturales",
+      "category": "Transporte & Cultura",
       "priceOfficial": 0,
       "priceActual": 0,
       "isFree": true,
-      "notes": "Ruta de senderismo libre"
+      "notes": "Parking gratuito 24/7 y gestión de rutas del Consorcio"
     },
     {
       "id": "b-2",
@@ -27,12 +27,12 @@
     {
       "id": "b-3",
       "day": "Día 1 Almuerzo",
-      "concept": "Menú tradicional Bar Ludeña / Cuchara de Palo",
+      "concept": "Restaurantes Baratos Toledo (La Maleta Inquieta)",
       "category": "Gastronomía",
       "priceOfficial": 15,
       "priceActual": 15,
       "isFree": false,
-      "notes": "Carcamusas y menú tradicional < 20€"
+      "notes": "Menú del día 12€–15€ (La Maruja, El Telón, Ave Fénix, El Trébol)"
     },
     {
       "id": "b-4",

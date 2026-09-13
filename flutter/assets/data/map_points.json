@@ -1,35 +1,47 @@
 {
   "routes": [
     {
-      "id": "route-valle",
-      "title": "Sendero del Valle: Peña del Rey Moro & Cerro del Bú",
-      "color": "#852221",
-      "distance": "1,28 km",
-      "time": "45 min - 1 h",
+      "id": "route-llegada",
+      "title": "Llegada: Parking Safont ➔ Escaleras Miradero ➔ Plaza Amador de los Ríos",
+      "color": "#0284C7",
+      "distance": "850 m",
+      "time": "15 min",
       "points": [
         {
-          "lat": 39.8516,
-          "lng": -4.0178,
-          "title": "Parking Ermita del Valle",
+          "lat": 39.8628,
+          "lng": -4.0189,
+          "title": "1. Parking Safont (10:00 h)",
           "type": "parking"
         },
         {
-          "lat": 39.8524,
-          "lng": -4.0201,
-          "title": "Peña del Rey Moro",
+          "lat": 39.8606,
+          "lng": -4.0217,
+          "title": "2. Escaleras Mecánicas Safont",
+          "type": "access"
+        },
+        {
+          "lat": 39.8601,
+          "lng": -4.0219,
+          "title": "3. Salida Miradero",
           "type": "mirador"
         },
         {
-          "lat": 39.8532,
-          "lng": -4.0163,
-          "title": "Yacimiento Cerro del Bú",
+          "lat": 39.8595,
+          "lng": -4.0215,
+          "title": "4. Plaza de Zocodover",
           "type": "monument"
         },
         {
-          "lat": 39.8516,
-          "lng": -4.0178,
-          "title": "Regreso Ermita del Valle",
-          "type": "parking"
+          "lat": 39.8587,
+          "lng": -4.0252,
+          "title": "5. C. Recursos Culturales (10:30 h)",
+          "type": "monument"
+        },
+        {
+          "lat": 39.8603,
+          "lng": -4.0275,
+          "title": "6. Convento Sto. Domingo (11:00 h)",
+          "type": "church"
         }
       ]
     },
@@ -82,7 +94,7 @@
   "landmarks": [
     {
       "id": "safont",
-      "title": "Parking Gratuito Safont",
+      "title": "Parking Gratuito Safont (Llegada 10:00 h)",
       "category": "Parking",
       "lat": 39.8628,
       "lng": -4.0189,
@@ -95,6 +107,14 @@
       "lat": 39.8606,
       "lng": -4.0217,
       "icon": "escalator"
+    },
+    {
+      "id": "centro-recursos",
+      "title": "Centro Gestión Recursos Culturales (10:30 h)",
+      "category": "Cultura",
+      "lat": 39.8587,
+      "lng": -4.0252,
+      "icon": "account_balance"
     },
     {
       "id": "hotel",
@@ -118,6 +138,22 @@
       "category": "Monumento",
       "lat": 39.8571,
       "lng": -4.0238,
+      "icon": "church"
+    },
+    {
+      "id": "santo-domingo",
+      "title": "Convento Santo Domingo El Real",
+      "category": "Monumento",
+      "lat": 39.8603,
+      "lng": -4.0275,
+      "icon": "church"
+    },
+    {
+      "id": "comendadoras",
+      "title": "Convento Comendadoras de Santiago",
+      "category": "Monumento",
+      "lat": 39.8609,
+      "lng": -4.0268,
       "icon": "church"
     },
     {
@@ -145,28 +181,52 @@
       "icon": "museum"
     },
     {
-      "id": "santo-domingo",
-      "title": "Convento Santo Domingo El Real",
-      "category": "Monumento",
-      "lat": 39.8603,
-      "lng": -4.0275,
-      "icon": "church"
-    },
-    {
-      "id": "comendadoras",
-      "title": "Convento Comendadoras de Santiago",
-      "category": "Monumento",
-      "lat": 39.8609,
-      "lng": -4.0268,
-      "icon": "church"
-    },
-    {
       "id": "rutas-toledo",
       "title": "Punto Salida: Toledo Subterráneo",
       "category": "Tour",
       "lat": 39.8569,
       "lng": -4.0228,
       "icon": "explore"
+    },
+    {
+      "id": "resto-maruja",
+      "title": "Restaurante La Maruja (Menú 15€ · Patio Judería)",
+      "category": "Restaurante",
+      "lat": 39.8568,
+      "lng": -4.0298,
+      "icon": "restaurant"
+    },
+    {
+      "id": "resto-telon",
+      "title": "Restaurante El Telón (Menú 12€-15€ · Santa Bárbara)",
+      "category": "Restaurante",
+      "lat": 39.8637,
+      "lng": -4.0135,
+      "icon": "restaurant"
+    },
+    {
+      "id": "resto-avefenix",
+      "title": "Restaurante Ave Fénix (Menú 15€ · Alfonso X)",
+      "category": "Restaurante",
+      "lat": 39.8589,
+      "lng": -4.0264,
+      "icon": "restaurant"
+    },
+    {
+      "id": "resto-trebol",
+      "title": "Cervecería El Trébol (Tapeo ~15€ · Alcazaba)",
+      "category": "Restaurante",
+      "lat": 39.8598,
+      "lng": -4.0211,
+      "icon": "restaurant"
+    },
+    {
+      "id": "resto-ludena",
+      "title": "Bar Ludeña (Cuna de las Carcamusas)",
+      "category": "Restaurante",
+      "lat": 39.8596,
+      "lng": -4.0224,
+      "icon": "restaurant"
     },
     {
       "id": "castillo-orgaz",

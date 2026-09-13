@@ -20,7 +20,7 @@ class _OsmMapScreenState extends ConsumerState<OsmMapScreen> {
   dynamic _selectedPoint; // Landmark or RoutePoint seleccionado
 
   static const LatLng _toledoCenter = LatLng(39.8571, -4.0238);
-  static const LatLng _valleCenter = LatLng(39.8524, -4.0185);
+  static const LatLng _safontCenter = LatLng(39.8606, -4.0217);
 
   void _centerOn(LatLng point, double zoom) {
     _mapController.move(point, zoom);
@@ -51,6 +51,8 @@ class _OsmMapScreenState extends ConsumerState<OsmMapScreen> {
         return Icons.explore_rounded;
       case 'account_balance':
         return Icons.account_balance_rounded;
+      case 'restaurant':
+        return Icons.restaurant_rounded;
       default:
         return Icons.place_rounded;
     }
@@ -61,6 +63,25 @@ class _OsmMapScreenState extends ConsumerState<OsmMapScreen> {
     final mapDataAsync = ref.watch(mapPointsDataProvider);
     final selectedRouteIndex = ref.watch(selectedMapRouteIndexProvider);
 
+    // Escuchar si otra pantalla solicita enfocar unas coordenadas específicas
+    ref.listen<MapCenterTarget?>(mapCenterTargetProvider, (previous, next) {
+      if (next != null) {
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          _centerOn(LatLng(next.lat, next.lng), next.zoom);
+          final mapData = ref.read(mapPointsDataProvider).value;
+          if (mapData != null) {
+            final match = mapData.landmarks.cast<MapLandmarkModel?>().firstWhere(
+              (l) => l != null && (l.lat - next.lat).abs() < 0.0006 && (l.lng - next.lng).abs() < 0.0006,
+              orElse: () => null,
+            );
+            if (match != null) {
+              setState(() => _selectedPoint = match);
+            }
+          }
+        });
+      }
+    });
+
     return Scaffold(
       backgroundColor: ToledoColors.bgBody,
       body: mapDataAsync.when(
@@ -69,90 +90,106 @@ class _OsmMapScreenState extends ConsumerState<OsmMapScreen> {
           final List<Polyline> polylines = [];
           final List<Marker> markers = [];
 
-          // Procesar rutas
-          for (int i = 0; i < mapData.routes.length; i++) {
-            final route = mapData.routes[i];
-            final isCurrent = (selectedRouteIndex == i || selectedRouteIndex == -1);
+          // Procesar rutas si no estamos en modo exclusivo de restaurantes (2)
+          if (selectedRouteIndex != 2) {
+            for (int i = 0; i < mapData.routes.length; i++) {
+              final route = mapData.routes[i];
+              final isCurrent = (selectedRouteIndex == i || selectedRouteIndex == -1);
 
-            if (isCurrent) {
-              final points = route.points.map((p) => LatLng(p.lat, p.lng)).toList();
-              final routeColor = route.color == '#852221'
-                  ? ToledoColors.primary
-                  : (route.color == '#C28833' ? ToledoColors.accent : Colors.blue);
+              if (isCurrent) {
+                final points = route.points.map((p) => LatLng(p.lat, p.lng)).toList();
+                final routeColor = route.color == '#852221'
+                    ? ToledoColors.primary
+                    : (route.color == '#C28833' ? ToledoColors.accent : Colors.blue);
 
-              polylines.add(
-                Polyline(
-                  points: points,
-                  strokeWidth: 4.5,
-                  color: routeColor.withOpacity(0.85),
-                ),
-              );
+                polylines.add(
+                  Polyline(
+                    points: points,
+                    strokeWidth: 4.5,
+                    color: routeColor.withOpacity(0.85),
+                  ),
+                );
 
-              // Marcadores de paradas de la ruta
-              for (int pIdx = 0; pIdx < route.points.length; pIdx++) {
-                final pt = route.points[pIdx];
-                markers.add(
-                  Marker(
-                    point: LatLng(pt.lat, pt.lng),
-                    width: 32,
-                    height: 32,
-                    child: GestureDetector(
-                      onTap: () {
-                        setState(() => _selectedPoint = pt);
-                        _centerOn(LatLng(pt.lat, pt.lng), 16.0);
-                      },
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: routeColor,
-                          shape: BoxShape.circle,
-                          border: Border.all(color: Colors.white, width: 2),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black.withOpacity(0.25),
-                              blurRadius: 4,
-                            )
-                          ],
-                        ),
-                        child: Center(
-                          child: Text(
-                            '${pIdx + 1}',
-                            style: const TextStyle(
-                              color: Colors.white,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w800,
+                // Marcadores de paradas de la ruta
+                for (int pIdx = 0; pIdx < route.points.length; pIdx++) {
+                  final pt = route.points[pIdx];
+                  markers.add(
+                    Marker(
+                      point: LatLng(pt.lat, pt.lng),
+                      width: 32,
+                      height: 32,
+                      child: GestureDetector(
+                        onTap: () {
+                          setState(() => _selectedPoint = pt);
+                          _centerOn(LatLng(pt.lat, pt.lng), 16.0);
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: routeColor,
+                            shape: BoxShape.circle,
+                            border: Border.all(color: Colors.white, width: 2),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black.withOpacity(0.25),
+                                blurRadius: 4,
+                              )
+                            ],
+                          ),
+                          child: Center(
+                            child: Text(
+                              '${pIdx + 1}',
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 12,
+                                fontWeight: FontWeight.w800,
+                              ),
                             ),
                           ),
                         ),
                       ),
                     ),
-                  ),
-                );
+                  );
+                }
               }
             }
           }
 
-          // Procesar monumentos y puntos de interés generales
-          for (final l in mapData.landmarks) {
-            final isHotelOrParking = l.category == 'Parking' || l.category == 'Alojamiento';
-            final markerColor = l.category == 'Parking'
-                ? Colors.blue.shade700
-                : (l.category == 'Alojamiento' ? ToledoColors.accentDark : ToledoColors.primaryDark);
+          // Filtrar o mostrar landmarks
+          final landmarksToShow = selectedRouteIndex == 2
+              ? mapData.landmarks.where((l) => l.category == 'Restaurante').toList()
+              : mapData.landmarks;
+
+          for (final l in landmarksToShow) {
+            final isParking = l.category == 'Parking';
+            final isHotel = l.category == 'Alojamiento';
+            final isRestaurant = l.category == 'Restaurante';
+
+            final Color markerColor;
+            if (isParking) {
+              markerColor = Colors.blue.shade700;
+            } else if (isHotel) {
+              markerColor = ToledoColors.accentDark;
+            } else if (isRestaurant) {
+              markerColor = const Color(0xFFD48806);
+            } else {
+              markerColor = ToledoColors.primaryDark;
+            }
 
             markers.add(
               Marker(
                 point: LatLng(l.lat, l.lng),
-                width: 36,
-                height: 36,
+                width: isRestaurant ? 38 : 36,
+                height: isRestaurant ? 38 : 36,
                 child: GestureDetector(
                   onTap: () {
                     setState(() => _selectedPoint = l);
-                    _centerOn(LatLng(l.lat, l.lng), 16.2);
+                    _centerOn(LatLng(l.lat, l.lng), 16.5);
                   },
                   child: Container(
                     decoration: BoxDecoration(
                       color: markerColor,
                       shape: BoxShape.circle,
-                      border: Border.all(color: Colors.white, width: 2),
+                      border: Border.all(color: Colors.white, width: 2.2),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.black.withOpacity(0.28),
@@ -163,7 +200,7 @@ class _OsmMapScreenState extends ConsumerState<OsmMapScreen> {
                     child: Center(
                       child: Icon(
                         _getIconData(l.icon),
-                        size: isHotelOrParking ? 18 : 16,
+                        size: (isParking || isHotel || isRestaurant) ? 18 : 16,
                         color: Colors.white,
                       ),
                     ),
@@ -195,7 +232,7 @@ class _OsmMapScreenState extends ConsumerState<OsmMapScreen> {
                 ],
               ),
 
-              // Barra Superior con Selector de Rutas
+              // Barra Superior con Selector de Rutas & Filtros
               SafeArea(
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
@@ -207,22 +244,32 @@ class _OsmMapScreenState extends ConsumerState<OsmMapScreen> {
                         child: Row(
                           children: [
                             _RouteFilterChip(
-                              label: 'Sendero Valle (1,3 km)',
-                              icon: Icons.terrain_rounded,
+                              label: 'Llegada & Centro (850 m)',
+                              icon: Icons.directions_walk_rounded,
                               isSelected: selectedRouteIndex == 0,
                               onTap: () {
                                 ref.read(selectedMapRouteIndexProvider.notifier).state = 0;
-                                _centerOn(_valleCenter, 15.5);
+                                _centerOn(const LatLng(39.8600, -4.0220), 15.8);
                               },
                             ),
                             const SizedBox(width: 8),
                             _RouteFilterChip(
                               label: 'Judería Mayor (850 m)',
-                              icon: Icons.directions_walk_rounded,
+                              icon: Icons.explore_rounded,
                               isSelected: selectedRouteIndex == 1,
                               onTap: () {
                                 ref.read(selectedMapRouteIndexProvider.notifier).state = 1;
                                 _centerOn(const LatLng(39.8565, -4.0280), 16.2);
+                              },
+                            ),
+                            const SizedBox(width: 8),
+                            _RouteFilterChip(
+                              label: 'Restaurantes Baratos (5)',
+                              icon: Icons.restaurant_rounded,
+                              isSelected: selectedRouteIndex == 2,
+                              onTap: () {
+                                ref.read(selectedMapRouteIndexProvider.notifier).state = 2;
+                                _centerOn(const LatLng(39.8590, -4.0240), 15.4);
                               },
                             ),
                             const SizedBox(width: 8),
@@ -232,7 +279,7 @@ class _OsmMapScreenState extends ConsumerState<OsmMapScreen> {
                               isSelected: selectedRouteIndex == -1,
                               onTap: () {
                                 ref.read(selectedMapRouteIndexProvider.notifier).state = -1;
-                                _centerOn(_toledoCenter, 14.0);
+                                _centerOn(_toledoCenter, 14.5);
                               },
                             ),
                           ],
@@ -246,7 +293,7 @@ class _OsmMapScreenState extends ConsumerState<OsmMapScreen> {
               // Botones Flotantes de Navegación Rápida
               Positioned(
                 right: 16,
-                bottom: _selectedPoint != null ? 140 : 20,
+                bottom: _selectedPoint != null ? 145 : 20,
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
@@ -254,18 +301,18 @@ class _OsmMapScreenState extends ConsumerState<OsmMapScreen> {
                       heroTag: 'btn_center_toledo',
                       backgroundColor: Colors.white,
                       foregroundColor: ToledoColors.primary,
-                      tooltip: 'Centrar en Toledo',
+                      tooltip: 'Centrar en Casco Histórico',
                       onPressed: () => _centerOn(_toledoCenter, 15.0),
-                      child: const Icon(Icons.my_location_rounded),
+                      child: const Icon(Icons.location_city_rounded),
                     ),
                     const SizedBox(height: 8),
                     FloatingActionButton.small(
-                      heroTag: 'btn_center_valle',
+                      heroTag: 'btn_center_safont',
                       backgroundColor: Colors.white,
-                      foregroundColor: ToledoColors.accentDark,
-                      tooltip: 'Centrar en Mirador del Valle',
-                      onPressed: () => _centerOn(_valleCenter, 15.5),
-                      child: const Icon(Icons.landscape_rounded),
+                      foregroundColor: Colors.blue.shade700,
+                      tooltip: 'Centrar en Parking Safont',
+                      onPressed: () => _centerOn(_safontCenter, 15.8),
+                      child: const Icon(Icons.local_parking_rounded),
                     ),
                   ],
                 ),
@@ -396,15 +443,19 @@ class _SelectedPointCard extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
                 decoration: BoxDecoration(
-                  color: ToledoColors.accent.withOpacity(0.15),
+                  color: category == 'Restaurante'
+                      ? const Color(0xFFFFF1D6)
+                      : ToledoColors.accent.withOpacity(0.15),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Text(
                   category.toUpperCase(),
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 10,
                     fontWeight: FontWeight.w800,
-                    color: ToledoColors.accentDark,
+                    color: category == 'Restaurante'
+                        ? const Color(0xFFD48806)
+                        : ToledoColors.accentDark,
                   ),
                 ),
               ),

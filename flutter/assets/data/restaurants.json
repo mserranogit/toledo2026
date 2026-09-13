@@ -1,0 +1,119 @@
+{
+  "tips": [
+    {
+      "number": 1,
+      "title": "Aléjate 200 metros de Zocodover",
+      "desc": "Basta separarse 200 m del eje Zocodover–Plaza Mayor para que el precio del menú baje de 5 € a 10 € por persona."
+    },
+    {
+      "number": 2,
+      "title": "Evita cartas plastificadas con fotos en 4 idiomas",
+      "desc": "Señal infalible de comida congelada pensada para turistas con sobreprecio."
+    },
+    {
+      "number": 3,
+      "title": "Pide siempre el Menú del Día",
+      "desc": "En España y en Toledo, el menú del día ahorra de 8 € a 12 € por persona respecto a pedir a la carta."
+    },
+    {
+      "number": 4,
+      "title": "Sube las cuestas para bajar los precios",
+      "desc": "Las zonas altas del casco histórico (universidad, San Pedro Mártir) tienen precios de toledanos."
+    },
+    {
+      "number": 5,
+      "title": "Come temprano (13:30 h)",
+      "desc": "Llegar a las 13:30 h garantiza mesa sin colas y tener disponibles todas las opciones de la pizarra antes de que se agoten."
+    }
+  ],
+  "typicalDishes": [
+    {
+      "name": "Las Carcamusas",
+      "desc": "Guiso toledano de magro de cerdo con tomate casero, guisantes, jamón y toque picante en cazuela de barro."
+    },
+    {
+      "name": "La Sopa Castellana",
+      "desc": "Caldo reconfortante de pan de pueblo, ajo dorado, pimentón de la Vera y huevo escalfado."
+    },
+    {
+      "name": "Judías con Perdiz",
+      "desc": "Guiso estrella de caza menor de los Montes de Toledo con alubias tiernas."
+    },
+    {
+      "name": "Vino D.O. Méntrida",
+      "desc": "Tinto autóctono de la provincia incluido frecuentemente en el menú del día sin suplemento."
+    }
+  ],
+  "restaurants": [
+    {
+      "id": "la-maruja",
+      "name": "La Maruja",
+      "badge": "PATIO INTERIOR · JUDERÍA",
+      "price": "15,00 €",
+      "priceCategory": "15€ Menú Completo",
+      "address": "Calle Cortes, 1, 45002 Toledo",
+      "zone": "Judería Mayor (a 5 min de San Juan de los Reyes)",
+      "type": "Comida Tradicional Toledana",
+      "lat": 39.8568,
+      "lng": -4.0298,
+      "description": "Restaurante tradicional con un precioso patio interior cubierto, íntimo y fresco. Menú casero con guisos castellanos, pollo en pepitoria, carcamusas y postre casero. Precio local en plena Judería.",
+      "tip": "Reservar con antelación en festivos o fines de semana."
+    },
+    {
+      "id": "el-telon",
+      "name": "El Telón",
+      "badge": "EL MÁS BARATO · SANTA BÁRBARA",
+      "price": "12,00 € – 15,00 €",
+      "priceCategory": "12€–15€ Menú Casero",
+      "address": "Av. de Santa Bárbara, 2, 45006 Toledo",
+      "zone": "Barrio Santa Bárbara (a 12 min de Zocodover)",
+      "type": "Casa de Comidas de Barrio",
+      "lat": 39.8637,
+      "lng": -4.0135,
+      "description": "Auténtica casa de comidas de toda la vida fuera del circuito turístico. 80% clientela local (vecinos, profesores y funcionarios). Platos de cuchara diarios, pan de obrador del barrio y raciones donde \"te sobra postre\".",
+      "tip": "Llegar antes de las 14:00 h; a las 14:30 h suele llenarse."
+    },
+    {
+      "id": "ave-fenix",
+      "name": "Ave Fénix",
+      "badge": "ZONA UNIVERSITARIA · CARCAMUSAS",
+      "price": "15,00 €",
+      "priceCategory": "15€ Menú Completo",
+      "address": "Calle Alfonso X el Sabio, 2, 45002 Toledo",
+      "zone": "Campus San Pedro Mártir (a 8 min de Zocodover)",
+      "type": "Tradicional & Universitarios",
+      "lat": 39.8589,
+      "lng": -4.0264,
+      "description": "Restaurante universitario con uno de los menús más económicos del casco alto. Especialistas en carcamusas toledanas caseras y solomillo en salsa, con primeros generosos como sopa castellana o ensaladas.",
+      "tip": "Pedir las carcamusas al centro para compartir y el solomillo como segundo individual."
+    },
+    {
+      "id": "el-trebol",
+      "name": "Cervecería El Trébol",
+      "badge": "ALCAZABA ISLÁMICA S. X · TAPEO",
+      "price": "~15,00 €",
+      "priceCategory": "~15€ Tapeo con Cañas",
+      "address": "Calle de Santa Fe, 1, 45001 Toledo",
+      "zone": "Junto a Zocodover y Alcázar",
+      "type": "Tasca Histórica de Tapeo",
+      "lat": 39.8598,
+      "lng": -4.0211,
+      "description": "Cervecería histórica situada en la antigua alcazaba islámica del siglo X con muros de piedra originales. Ideal para tapear: la célebre Bomba del Trébol (patata rellena de carne con salsas), patatas bravas, morteruelo y carcamusas.",
+      "tip": "Pedir mesa o taburete en la zona del muro de piedra islámico."
+    },
+    {
+      "id": "bar-ludena",
+      "name": "Bar Ludeña",
+      "badge": "CUNA DE LAS CARCAMUSAS",
+      "price": "12,00 € – 16,00 €",
+      "priceCategory": "12€–16€ Menú / Raciones",
+      "address": "Plaza de la Magdalena, 10, 45001 Toledo",
+      "zone": "Plaza de la Magdalena (a 2 min de Zocodover)",
+      "type": "Taberna Histórica Centenaria",
+      "lat": 39.8596,
+      "lng": -4.0224,
+      "description": "La gran institución toledana donde D. José Ludeña inventó las carcamusas en los años 50. Cazuelas de barro con magro de cerdo, jamón, guisantes y salsa picante, acompañadas de pan candeal.",
+      "tip": "Plato obligado: Cazuela de carcamusas caseras con vino de la casa."
+    }
+  ]
+}

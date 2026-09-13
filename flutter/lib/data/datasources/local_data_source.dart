@@ -4,6 +4,7 @@ import '../models/audio_track_model.dart';
 import '../models/itinerary_item_model.dart';
 import '../models/budget_item_model.dart';
 import '../models/map_point_model.dart';
+import '../models/restaurant_model.dart';
 
 class LocalDataSource {
   Future<List<AudioTrackModel>> getAudioguides() async {
@@ -29,5 +30,11 @@ class LocalDataSource {
     final jsonString = await rootBundle.loadString('assets/data/map_points.json');
     final Map<String, dynamic> data = json.decode(jsonString);
     return MapPointsDataModel.fromJson(data);
+  }
+
+  Future<RestaurantsDataModel> getRestaurantsData() async {
+    final jsonString = await rootBundle.loadString('assets/data/restaurants.json');
+    final Map<String, dynamic> data = json.decode(jsonString);
+    return RestaurantsDataModel.fromJson(data);
   }
 }
