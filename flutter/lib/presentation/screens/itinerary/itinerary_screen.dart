@@ -650,6 +650,45 @@ class _TimelineCard extends ConsumerWidget {
                                   error: (_, stack) => const SizedBox.shrink(),
                                 ),
                                 const SizedBox(width: 8),
+                              ] else ...[
+                                InkWell(
+                                  onTap: () {
+                                    MapLauncher.openOsmRoute(
+                                      destLat: item.lat,
+                                      destLng: item.lng,
+                                      title: item.title,
+                                    );
+                                  },
+                                  borderRadius: BorderRadius.circular(16),
+                                  child: Container(
+                                    padding: const EdgeInsets.symmetric(horizontal: 9, vertical: 4.5),
+                                    decoration: BoxDecoration(
+                                      color: ToledoColors.primaryLight,
+                                      borderRadius: BorderRadius.circular(16),
+                                      border: Border.all(color: ToledoColors.primary.withOpacity(0.3)),
+                                    ),
+                                    child: const Row(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        Icon(
+                                          Icons.map_outlined,
+                                          size: 14,
+                                          color: ToledoColors.primary,
+                                        ),
+                                        SizedBox(width: 4),
+                                        Text(
+                                          'Ver mapa',
+                                          style: TextStyle(
+                                            fontSize: 11,
+                                            fontWeight: FontWeight.w700,
+                                            color: ToledoColors.primary,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                const SizedBox(width: 8),
                               ],
 
                               const Text(

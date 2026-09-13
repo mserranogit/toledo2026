@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../../core/theme/toledo_colors.dart';
 import '../../core/utils/map_launcher.dart';
 import '../../data/models/itinerary_item_model.dart';
@@ -238,6 +239,111 @@ class _MonumentDetailSheetState extends ConsumerState<MonumentDetailSheet> {
                             },
                             loading: () => const SizedBox.shrink(),
                             error: (_, stack) => const SizedBox.shrink(),
+                          ),
+                        ],
+
+                        // Tarjeta Punto de Inicio (especial para Toledo Subterráneo)
+                        if (item.id == 'item-d1-7') ...[
+                          Container(
+                            width: double.infinity,
+                            padding: const EdgeInsets.all(16),
+                            margin: const EdgeInsets.only(bottom: 20),
+                            decoration: BoxDecoration(
+                              color: const Color(0xFFFDFBF7),
+                              borderRadius: BorderRadius.circular(16),
+                              border: Border.all(color: ToledoColors.accent.withOpacity(0.55), width: 1.5),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black.withOpacity(0.04),
+                                  blurRadius: 8,
+                                  offset: const Offset(0, 2),
+                                ),
+                              ],
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  children: [
+                                    const Icon(Icons.place_rounded, color: ToledoColors.primary, size: 20),
+                                    const SizedBox(width: 8),
+                                    Expanded(
+                                      child: Text(
+                                        'PUNTO DE INICIO DE LA RUTA',
+                                        style: GoogleFonts.cinzel(
+                                          fontSize: 12.5,
+                                          fontWeight: FontWeight.w700,
+                                          color: ToledoColors.primaryDark,
+                                          letterSpacing: 0.8,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                const SizedBox(height: 8),
+                                Text(
+                                  'Calle Sixto Ramón Parro, número 9 (detrás de la Catedral)',
+                                  style: GoogleFonts.plusJakartaSans(
+                                    fontSize: 13,
+                                    fontWeight: FontWeight.w700,
+                                    color: ToledoColors.textMain,
+                                  ),
+                                ),
+                                const SizedBox(height: 6),
+                                Text(
+                                  'Toledo Subterráneo inicia su recorrido detrás de la Catedral de Toledo, en la Calle Sixto Ramón Parro, número 9, donde podrás visitar un hermoso patio toledano. Es conveniente pasar por nuestra oficina a recoger la entrada al menos 15 minutos antes del comienzo de la ruta.',
+                                  style: GoogleFonts.plusJakartaSans(
+                                    fontSize: 12.5,
+                                    color: ToledoColors.textMain,
+                                    height: 1.45,
+                                  ),
+                                ),
+                                const SizedBox(height: 14),
+                                Row(
+                                  children: [
+                                    Expanded(
+                                      child: ElevatedButton.icon(
+                                        onPressed: () => MapLauncher.openOsmRoute(
+                                          destLat: item.lat,
+                                          destLng: item.lng,
+                                          title: 'Inicio: Toledo Subterráneo',
+                                        ),
+                                        icon: const Icon(Icons.map_rounded, size: 16),
+                                        label: const Text(
+                                          'Ver mapa',
+                                          style: TextStyle(fontWeight: FontWeight.w700, fontSize: 12),
+                                        ),
+                                        style: ElevatedButton.styleFrom(
+                                          backgroundColor: ToledoColors.primary,
+                                          foregroundColor: Colors.white,
+                                          elevation: 0,
+                                          padding: const EdgeInsets.symmetric(vertical: 10),
+                                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                                        ),
+                                      ),
+                                    ),
+                                    const SizedBox(width: 8),
+                                    OutlinedButton.icon(
+                                      onPressed: () => launchUrl(
+                                        Uri.parse('https://www.rutasdetoledo.es/tours/toledo-subterraneo/'),
+                                        mode: LaunchMode.externalApplication,
+                                      ),
+                                      icon: const Icon(Icons.language_rounded, size: 16),
+                                      label: const Text(
+                                        'Web ↗',
+                                        style: TextStyle(fontWeight: FontWeight.w700, fontSize: 12),
+                                      ),
+                                      style: OutlinedButton.styleFrom(
+                                        foregroundColor: ToledoColors.primary,
+                                        side: const BorderSide(color: ToledoColors.primary),
+                                        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 12),
+                                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
                           ),
                         ],
 

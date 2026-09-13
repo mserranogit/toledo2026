@@ -313,17 +313,18 @@ const itinerary = {
           distance: 'Casco subterráneo',
           cost: '15,00 €',
           isFree: false,
-          locationName: 'Rutas de Toledo (C/ Sixto Ramón Parro 9)',
+          locationName: 'Calle Sixto Ramón Parro, 9 (Detrás de la Catedral)',
           lat: 39.8569,
           lng: -4.0228,
           audioId: null,
-          shortDescription: 'Ruta nocturna guiada por la empresa Rutas de Toledo para descender a los subterráneos ocultos bajo las casas: termas romanas, aljibes islámicos y sótanos legendarios de la inquisición.',
+          shortDescription: 'Toledo Subterráneo inicia su recorrido detrás de la Catedral de Toledo, en la Calle Sixto Ramón Parro, número 9, donde podrás visitar un hermoso patio toledano. Es conveniente pasar por nuestra oficina a recoger la entrada al menos 15 minutos antes del comienzo de la ruta. Descenso guiado a los subterráneos ocultos bajo las casas: termas romanas, aljibes islámicos y sótanos legendarios.',
           highlights: [
-            'Descenso a 3 o 4 subterráneos privados habitualmente cerrados',
-            'Misterios y leyendas de la tradición toledana al anochecer',
-            'Punto de encuentro céntrico a 2 minutos de la Catedral'
+            'Punto de inicio: Calle Sixto Ramón Parro 9 (detrás de la Catedral)',
+            'Patio toledano visitable en la oficina de recepción',
+            'Llegada recomendada: al menos 15 minutos antes para recoger la entrada',
+            'Descenso a 3 o 4 subterráneos privados habitualmente cerrados'
           ],
-          tips: 'Punto de salida: Calle Sixto Ramón Parro 9. Reserva confirmada previamente.'
+          tips: 'Toledo Subterráneo inicia su recorrido detrás de la Catedral de Toledo, en la Calle Sixto Ramón Parro, número 9, donde podrás visitar un hermoso patio toledano. Es conveniente pasar por nuestra oficina a recoger la entrada al menos 15 minutos antes del comienzo de la ruta. Reserva obligatoria en www.rutasdetoledo.es.'
         }
       ]
     },

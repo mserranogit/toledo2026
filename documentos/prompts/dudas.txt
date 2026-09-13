@@ -72,3 +72,11 @@ https://lamaletainquieta.com/comer-barato-toledo/
 añade los mapas correspondientes
 
 
+para la versión html y mobile, añadir el punto de inicio de Toledo Subterráneo:
+https://www.rutasdetoledo.es/tours/toledo-subterraneo/
+Toledo Subterráneo inicia su recorrido detrás de la Catedral de Toledo, en la Calle Sixto Ramón Parro, número 9, donde podrás visitar un hermoso patio toledano. Es conveniente pasar por nuestra oficina a recoger la entrada al menos 15 minutos antes del comienzo de la ruta.
+añade un boton de "Ver mapa" que lleve a openstreetmaps  con el inicio de la ruta
+
+sube el proyecto a github
+genera el apk y dame el link de descarga a mi telefono movil
+
