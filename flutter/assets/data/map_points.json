@@ -1,0 +1,196 @@
+{
+  "routes": [
+    {
+      "id": "route-valle",
+      "title": "Sendero del Valle: Peña del Rey Moro & Cerro del Bú",
+      "color": "#852221",
+      "distance": "1,28 km",
+      "time": "45 min - 1 h",
+      "points": [
+        {
+          "lat": 39.8516,
+          "lng": -4.0178,
+          "title": "Parking Ermita del Valle",
+          "type": "parking"
+        },
+        {
+          "lat": 39.8524,
+          "lng": -4.0201,
+          "title": "Peña del Rey Moro",
+          "type": "mirador"
+        },
+        {
+          "lat": 39.8532,
+          "lng": -4.0163,
+          "title": "Yacimiento Cerro del Bú",
+          "type": "monument"
+        },
+        {
+          "lat": 39.8516,
+          "lng": -4.0178,
+          "title": "Regreso Ermita del Valle",
+          "type": "parking"
+        }
+      ]
+    },
+    {
+      "id": "route-juderia",
+      "title": "Paseo por los Rincones y Miradores de la Judería Mayor",
+      "color": "#C28833",
+      "distance": "850 m",
+      "time": "45 min",
+      "points": [
+        {
+          "lat": 39.8558,
+          "lng": -4.0294,
+          "title": "1. Mirador del Tránsito",
+          "type": "mirador"
+        },
+        {
+          "lat": 39.8562,
+          "lng": -4.0287,
+          "title": "2. Casa del Judío (Miqvé)",
+          "type": "monument"
+        },
+        {
+          "lat": 39.8566,
+          "lng": -4.028,
+          "title": "3. Huellas de Sefarad & Mezuzot",
+          "type": "monument"
+        },
+        {
+          "lat": 39.8571,
+          "lng": -4.0268,
+          "title": "4. Cobertizos & Pozo Amargo",
+          "type": "monument"
+        },
+        {
+          "lat": 39.8565,
+          "lng": -4.026,
+          "title": "5. Calle de Santo Tomé",
+          "type": "shop"
+        },
+        {
+          "lat": 39.8549,
+          "lng": -4.0271,
+          "title": "6. Mirador de San Cristóbal",
+          "type": "mirador"
+        }
+      ]
+    }
+  ],
+  "landmarks": [
+    {
+      "id": "safont",
+      "title": "Parking Gratuito Safont",
+      "category": "Parking",
+      "lat": 39.8628,
+      "lng": -4.0189,
+      "icon": "local_parking"
+    },
+    {
+      "id": "escaleras",
+      "title": "Escaleras Mecánicas del Miradero",
+      "category": "Acceso",
+      "lat": 39.8606,
+      "lng": -4.0217,
+      "icon": "escalator"
+    },
+    {
+      "id": "hotel",
+      "title": "Casa de la Mezquita (Alojamiento)",
+      "category": "Alojamiento",
+      "lat": 39.8598,
+      "lng": -4.0242,
+      "icon": "hotel"
+    },
+    {
+      "id": "zocodover",
+      "title": "Plaza de Zocodover",
+      "category": "Centro",
+      "lat": 39.8595,
+      "lng": -4.0215,
+      "icon": "place"
+    },
+    {
+      "id": "catedral",
+      "title": "Catedral Primada de Toledo",
+      "category": "Monumento",
+      "lat": 39.8571,
+      "lng": -4.0238,
+      "icon": "church"
+    },
+    {
+      "id": "san-juan-reyes",
+      "title": "Monasterio San Juan de los Reyes",
+      "category": "Monumento",
+      "lat": 39.8581,
+      "lng": -4.0315,
+      "icon": "fort"
+    },
+    {
+      "id": "santa-maria-blanca",
+      "title": "Sinagoga Santa María la Blanca",
+      "category": "Monumento",
+      "lat": 39.8572,
+      "lng": -4.0302,
+      "icon": "temple_hindu"
+    },
+    {
+      "id": "transito",
+      "title": "Sinagoga del Tránsito / Museo Sefardí",
+      "category": "Monumento",
+      "lat": 39.8558,
+      "lng": -4.0294,
+      "icon": "museum"
+    },
+    {
+      "id": "santo-domingo",
+      "title": "Convento Santo Domingo El Real",
+      "category": "Monumento",
+      "lat": 39.8603,
+      "lng": -4.0275,
+      "icon": "church"
+    },
+    {
+      "id": "comendadoras",
+      "title": "Convento Comendadoras de Santiago",
+      "category": "Monumento",
+      "lat": 39.8609,
+      "lng": -4.0268,
+      "icon": "church"
+    },
+    {
+      "id": "rutas-toledo",
+      "title": "Punto Salida: Toledo Subterráneo",
+      "category": "Tour",
+      "lat": 39.8569,
+      "lng": -4.0228,
+      "icon": "explore"
+    },
+    {
+      "id": "castillo-orgaz",
+      "title": "Castillo y Villa de Orgaz",
+      "category": "Excursión",
+      "lat": 39.6482,
+      "lng": -3.8751,
+      "icon": "castle"
+    },
+    {
+      "id": "arisgotas",
+      "title": "Museo de Arte Visigodo Arisgotas",
+      "category": "Excursión",
+      "lat": 39.6136,
+      "lng": -3.8864,
+      "icon": "museum"
+    },
+    {
+      "id": "los-hitos",
+      "title": "Yacimiento Arqueológico Los Hitos",
+      "category": "Arqueología",
+      "lat": 39.6054,
+      "lng": -3.8927,
+      "icon": "account_balance"
+    }
+  ]
+}

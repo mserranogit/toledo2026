@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instalar Toledo 2026 en el Móvil</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #0D131A;
+      color: #E6EDF3;
+      margin: 0;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      box-sizing: border-box;
+      text-align: center;
+    }
+    .card {
+      background: #161F2C;
+      border: 1px solid #D4AF37;
+      border-radius: 20px;
+      padding: 32px 24px;
+      max-width: 440px;
+      box-shadow: 0 16px 36px rgba(0,0,0,0.5);
+    }
+    h1 {
+      color: #D4AF37;
+      margin: 0 0 8px 0;
+      font-size: 26px;
+    }
+    p {
+      color: #94A3B8;
+      font-size: 15px;
+      line-height: 1.5;
+      margin: 8px 0 20px 0;
+    }
+    .btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #D4AF37, #B8962E);
+      color: #0D131A;
+      font-weight: 700;
+      text-decoration: none;
+      padding: 16px 28px;
+      border-radius: 12px;
+      font-size: 17px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 14px rgba(212, 175, 55, 0.4);
+    }
+    .btn:active {
+      transform: scale(0.98);
+    }
+    .qr-container {
+      background: white;
+      padding: 16px;
+      border-radius: 16px;
+      display: inline-block;
+      margin-top: 10px;
+    }
+    .qr-container img {
+      display: block;
+      width: 200px;
+      height: 200px;
+    }
+    .tag {
+      display: inline-block;
+      background: rgba(212, 175, 55, 0.15);
+      color: #D4AF37;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="tag">VERSIÓN MOBILE 1.0.0</div>
+    <h1>Toledo Imperial 2026</h1>
+    <p>Guía interactiva completa con 6 audioguías offline y mapa OpenStreetMap.</p>
+    
+    <a href="/toledo-2026.apk" class="btn">📥 Descargar Nueva Versión APK (64 MB)</a>
+    
+    <p style="font-size: 13px; color: #64748B;">O escanea este código QR con la cámara de tu móvil conectado a la misma Wi-Fi:</p>
+    <div class="qr-container">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=http://192.168.1.38:8080/toledo-2026.apk" alt="QR Toledo APK">
+    </div>
+  </div>
+</body>
+</html>

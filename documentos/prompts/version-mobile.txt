@@ -1,0 +1,20 @@
+quiero que prepares un plan de implementación para crear una version mobile en flutter a partir del html de la version para pc, que me has generado, 
+guarda en formato .md en la carpeta planes el archivo "pla-impl-mobile.md"
+
+analiza la mejor estructura para mobile, no copies la estructura que hay en html tal cual optimiza todo lo que puedas para la versión mobile
+
+que tenga un diseño moderno y atractivo , aspecto premium
+
+usa los mismos colores, tipografias y estilo que hay en html
+
+tambien incluye un modo offline para que se pueda ver la web sin internet
+
+analiza todo detalladamente y crea una guia completa para la implementacion
+
+tambien incluye un modo offline para que se pueda ver la web sin internet
+
+que tenga un diseño moderno y atractivo , aspecto premium
+
+añade en el plan que los mapas se utilizará la api gratuita de openstreet maps
+el codigo se deberá crear en la carpeta flutter ya creada
+ 

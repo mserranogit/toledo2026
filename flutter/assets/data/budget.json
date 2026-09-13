@@ -1,0 +1,138 @@
+{
+  "currency": "€",
+  "totalPerPerson": 129.26,
+  "subtotalActivities": 91,
+  "subtotalAccommodation": 38.26,
+  "items": [
+    {
+      "id": "b-1",
+      "day": "Día 1 Mañana",
+      "concept": "Cerro del Bú + Mirador del Valle",
+      "category": "Senderismo",
+      "priceOfficial": 0,
+      "priceActual": 0,
+      "isFree": true,
+      "notes": "Ruta de senderismo libre"
+    },
+    {
+      "id": "b-2",
+      "day": "Día 1 Mediodía",
+      "concept": "Conventos Santo Domingo & Comendadoras",
+      "category": "Patrimonio Consorcio",
+      "priceOfficial": 8,
+      "priceActual": 0,
+      "isFree": true,
+      "notes": "Gratuito programa Patrimonio Desconocido"
+    },
+    {
+      "id": "b-3",
+      "day": "Día 1 Almuerzo",
+      "concept": "Menú tradicional Bar Ludeña / Cuchara de Palo",
+      "category": "Gastronomía",
+      "priceOfficial": 15,
+      "priceActual": 15,
+      "isFree": false,
+      "notes": "Carcamusas y menú tradicional < 20€"
+    },
+    {
+      "id": "b-4",
+      "day": "Día 1 Tarde",
+      "concept": "San Juan de los Reyes + Santa María la Blanca",
+      "category": "Monumentos",
+      "priceOfficial": 8,
+      "priceActual": 8,
+      "isFree": false,
+      "notes": "4€ cada entrada (o Pulsera Turística)"
+    },
+    {
+      "id": "b-5",
+      "day": "Día 1 Tarde",
+      "concept": "Sinagoga del Tránsito / Museo Sefardí",
+      "category": "Monumentos",
+      "priceOfficial": 3,
+      "priceActual": 3,
+      "isFree": false,
+      "notes": "Tarifa general reducida estatal"
+    },
+    {
+      "id": "b-6",
+      "day": "Día 1 Noche",
+      "concept": "Tour Toledo Subterráneo (Rutas de Toledo)",
+      "category": "Tour Guiado",
+      "priceOfficial": 15,
+      "priceActual": 15,
+      "isFree": false,
+      "notes": "1,5 horas de recorrido subterráneo"
+    },
+    {
+      "id": "b-7",
+      "day": "Día 2 Mañana",
+      "concept": "Catedral Primada \"Con ojos toledanos\"",
+      "category": "Tour Guiado",
+      "priceOfficial": 35,
+      "priceActual": 35,
+      "isFree": false,
+      "notes": "2,5 horas e incluye entrada oficial completa"
+    },
+    {
+      "id": "b-8",
+      "day": "Día 2 Almuerzo",
+      "concept": "Menú manchego en Orgaz (Las Bodegas)",
+      "category": "Gastronomía",
+      "priceOfficial": 15,
+      "priceActual": 15,
+      "isFree": false,
+      "notes": "Cocina manchega tradicional < 20€"
+    },
+    {
+      "id": "b-9",
+      "day": "Día 2 Tarde",
+      "concept": "Castillo y Villa de Orgaz",
+      "category": "Visita Libre",
+      "priceOfficial": 0,
+      "priceActual": 0,
+      "isFree": true,
+      "notes": "Paseo monumental libre"
+    },
+    {
+      "id": "b-10",
+      "day": "Día 2 Tarde",
+      "concept": "Museo de Arte Visigodo de Arisgotas",
+      "category": "Museos",
+      "priceOfficial": 4,
+      "priceActual": 0,
+      "isFree": true,
+      "notes": "Entrada libre y gratuita"
+    },
+    {
+      "id": "b-11",
+      "day": "Día 2 Tarde",
+      "concept": "Yacimiento Arqueológico Los Hitos",
+      "category": "Arqueología",
+      "priceOfficial": 5,
+      "priceActual": 0,
+      "isFree": true,
+      "notes": "Acceso libre y público todo el año"
+    },
+    {
+      "id": "b-12",
+      "day": "Alojamiento",
+      "concept": "Casa de la Mezquita (Cuesta Carmelitas Descalzos 5)",
+      "category": "Hospedaje",
+      "priceOfficial": 60,
+      "priceActual": 38.26,
+      "isFree": false,
+      "notes": "Coste confirmado por persona y noche"
+    },
+    {
+      "id": "b-13",
+      "day": "Parking",
+      "concept": "Parking Safont Toledo + Escaleras Mecánicas",
+      "category": "Transporte",
+      "priceOfficial": 24,
+      "priceActual": 0,
+      "isFree": true,
+      "notes": "Disuasorio vigilado junto al Tajo (Gratis)"
+    }
+  ]
+}
