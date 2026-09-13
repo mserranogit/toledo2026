@@ -268,29 +268,6 @@ const itinerary = {
       items: [
         {
           id: 'item-d2-1',
-          timeSlot: '08:00 – 09:15',
-          title: '(Opcional) Entrada Libre Matinal a la Catedral Primada',
-          category: 'Patrimonio Religioso',
-          badgeText: 'GRATUITO',
-          badgeType: 'free',
-          duration: '1h 15m',
-          distance: 'Plaza del Ayuntamiento',
-          cost: '0,00 €',
-          isFree: true,
-          locationName: 'Puerta del Reloj (Catedral)',
-          lat: 39.8576,
-          lng: -4.0242,
-          audioId: null,
-          shortDescription: 'Acceso libre reservado al culto por la Puerta del Reloj. Ideal para contemplar las naves góticas en soledad antes de la apertura turística y el tour oficial.',
-          highlights: [
-            'Entrada de culto sin coste por la fachada norte',
-            'Silencio absoluto e iluminación matinal en las vidrieras',
-            'Paseo previo por la Plaza del Ayuntamiento y Palacio Arzobispal'
-          ],
-          tips: 'No incluye museos catedralicios ni coro (que se verán en el tour de las 10:30 h).'
-        },
-        {
-          id: 'item-d2-2',
           timeSlot: '10:30 – 13:00',
           title: 'Visita Guiada: La Catedral con Ojos Toledanos',
           category: 'Tour Guiado Oficial',
@@ -314,7 +291,7 @@ const itinerary = {
           tips: 'Punto de encuentro según voucher en la Plaza del Ayuntamiento.'
         },
         {
-          id: 'item-d2-3',
+          id: 'item-d2-2',
           timeSlot: '13:30 – 15:00',
           title: 'Viaje a Orgaz & Almuerzo Manchego Tradicional',
           category: 'Gastronomía Local',
@@ -337,7 +314,7 @@ const itinerary = {
           tips: 'Aparcamiento sencillo y gratuito en las inmediaciones de la Plaza Mayor de Orgaz.'
         },
         {
-          id: 'item-d2-4',
+          id: 'item-d2-3',
           timeSlot: '15:15 – 19:30',
           title: 'Ruta de la Hispania Visigoda: Orgaz, Arisgotas & Los Hitos',
           category: 'Arqueología & Historia',

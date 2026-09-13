@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:url_launcher/url_launcher.dart';
 import '../../../core/theme/toledo_colors.dart';
+import '../../../core/utils/map_launcher.dart';
 import '../../../data/models/restaurant_model.dart';
 import '../../providers/restaurants_provider.dart';
 import '../../providers/map_provider.dart';
@@ -10,13 +10,6 @@ import '../main_shell.dart';
 
 class RestaurantsScreen extends ConsumerWidget {
   const RestaurantsScreen({super.key});
-
-  Future<void> _openMaps(String address) async {
-    final uri = Uri.parse('https://www.google.com/maps/search/?api=1&query=${Uri.encodeComponent(address)}');
-    if (await canLaunchUrl(uri)) {
-      await launchUrl(uri, mode: LaunchMode.externalApplication);
-    }
-  }
 
   void _viewOnOfflineMap(BuildContext context, WidgetRef ref, RestaurantItemModel restaurant) {
     ref.read(mapCenterTargetProvider.notifier).state = MapCenterTarget(
@@ -521,13 +514,17 @@ class RestaurantsScreen extends ConsumerWidget {
                     ),
                     icon: const Icon(Icons.directions_rounded, size: 16),
                     label: Text(
-                      'Cómo llegar',
+                      'Cómo llegar (OSM)',
                       style: GoogleFonts.plusJakartaSans(
                         fontSize: 12,
                         fontWeight: FontWeight.w700,
                       ),
                     ),
-                    onPressed: () => _openMaps(r.address),
+                    onPressed: () => MapLauncher.openOsmRouteByAddress(
+                      address: r.address,
+                      fallbackLat: r.lat,
+                      fallbackLng: r.lng,
+                    ),
                   ),
                 ),
               ],

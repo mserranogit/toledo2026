@@ -3,8 +3,8 @@ import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:latlong2/latlong.dart';
-import 'package:url_launcher/url_launcher.dart';
 import '../../../core/theme/toledo_colors.dart';
+import '../../../core/utils/map_launcher.dart';
 import '../../../data/models/map_point_model.dart';
 import '../../providers/map_provider.dart';
 
@@ -18,6 +18,8 @@ class OsmMapScreen extends ConsumerStatefulWidget {
 class _OsmMapScreenState extends ConsumerState<OsmMapScreen> {
   final MapController _mapController = MapController();
   dynamic _selectedPoint; // Landmark or RoutePoint seleccionado
+  LatLng? _userLocation;
+  bool _isLocating = false;
 
   static const LatLng _toledoCenter = LatLng(39.8571, -4.0238);
   static const LatLng _safontCenter = LatLng(39.8606, -4.0217);
@@ -26,10 +28,30 @@ class _OsmMapScreenState extends ConsumerState<OsmMapScreen> {
     _mapController.move(point, zoom);
   }
 
-  Future<void> _openExternalGps(double lat, double lng) async {
-    final uri = Uri.parse('https://www.google.com/maps/search/?api=1&query=$lat,$lng');
-    if (await canLaunchUrl(uri)) {
-      await launchUrl(uri, mode: LaunchMode.externalApplication);
+  Future<void> _centerOnUserGps() async {
+    setState(() => _isLocating = true);
+    final pos = await MapLauncher.getCurrentLocation();
+    if (pos != null && mounted) {
+      final userLatLng = LatLng(pos.latitude, pos.longitude);
+      setState(() {
+        _userLocation = userLatLng;
+        _isLocating = false;
+      });
+      _centerOn(userLatLng, 16.5);
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Posición GPS detectada. Centrado en tu ubicación.'),
+          duration: Duration(seconds: 2),
+        ),
+      );
+    } else if (mounted) {
+      setState(() => _isLocating = false);
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('No se pudo obtener la señal GPS actual.'),
+          duration: Duration(seconds: 2),
+        ),
+      );
     }
   }
 
@@ -210,6 +232,40 @@ class _OsmMapScreenState extends ConsumerState<OsmMapScreen> {
             );
           }
 
+          // Marcador de ubicación GPS del usuario si está disponible
+          if (_userLocation != null) {
+            markers.add(
+              Marker(
+                point: _userLocation!,
+                width: 38,
+                height: 38,
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.blue.withOpacity(0.25),
+                    shape: BoxShape.circle,
+                  ),
+                  child: Center(
+                    child: Container(
+                      width: 18,
+                      height: 18,
+                      decoration: BoxDecoration(
+                        color: Colors.blue.shade600,
+                        shape: BoxShape.circle,
+                        border: Border.all(color: Colors.white, width: 2.5),
+                        boxShadow: const [
+                          BoxShadow(
+                            color: Colors.black26,
+                            blurRadius: 4,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            );
+          }
+
           return Stack(
             children: [
               // Visor OpenStreetMap Nativo
@@ -298,6 +354,21 @@ class _OsmMapScreenState extends ConsumerState<OsmMapScreen> {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     FloatingActionButton.small(
+                      heroTag: 'btn_center_gps',
+                      backgroundColor: Colors.white,
+                      foregroundColor: Colors.blue.shade700,
+                      tooltip: 'Mi Ubicación GPS',
+                      onPressed: _isLocating ? null : _centerOnUserGps,
+                      child: _isLocating
+                          ? const SizedBox(
+                              width: 16,
+                              height: 16,
+                              child: CircularProgressIndicator(strokeWidth: 2, color: Colors.blue),
+                            )
+                          : const Icon(Icons.my_location_rounded),
+                    ),
+                    const SizedBox(height: 8),
+                    FloatingActionButton.small(
                       heroTag: 'btn_center_toledo',
                       backgroundColor: Colors.white,
                       foregroundColor: ToledoColors.primary,
@@ -327,7 +398,11 @@ class _OsmMapScreenState extends ConsumerState<OsmMapScreen> {
                   child: _SelectedPointCard(
                     point: _selectedPoint,
                     onClose: () => setState(() => _selectedPoint = null),
-                    onOpenGps: () => _openExternalGps(_selectedPoint.lat, _selectedPoint.lng),
+                    onOpenGps: () => MapLauncher.openOsmRoute(
+                      destLat: _selectedPoint.lat,
+                      destLng: _selectedPoint.lng,
+                      title: _selectedPoint.title,
+                    ),
                   ),
                 ),
             ],
@@ -481,7 +556,7 @@ class _SelectedPointCard extends StatelessWidget {
             width: double.infinity,
             child: ElevatedButton.icon(
               icon: const Icon(Icons.navigation_outlined, size: 16),
-              label: const Text('Navegar con Google Maps'),
+              label: const Text('Navegar con OpenStreetMap (GPS)'),
               style: ElevatedButton.styleFrom(
                 backgroundColor: ToledoColors.primary,
                 foregroundColor: Colors.white,

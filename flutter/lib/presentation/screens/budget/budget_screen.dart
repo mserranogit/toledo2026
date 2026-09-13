@@ -1,19 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:url_launcher/url_launcher.dart';
 import '../../../core/theme/toledo_colors.dart';
+import '../../../core/utils/map_launcher.dart';
 import '../../providers/budget_provider.dart';
 
 class BudgetScreen extends ConsumerWidget {
   const BudgetScreen({super.key});
-
-  Future<void> _openMaps(String query) async {
-    final uri = Uri.parse('https://www.google.com/maps/search/?api=1&query=${Uri.encodeComponent(query)}');
-    if (await canLaunchUrl(uri)) {
-      await launchUrl(uri, mode: LaunchMode.externalApplication);
-    }
-  }
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -219,7 +212,12 @@ class BudgetScreen extends ConsumerWidget {
                                 ),
                                 IconButton(
                                   icon: const Icon(Icons.navigation_outlined, color: ToledoColors.primary),
-                                  onPressed: () => _openMaps('Cuesta de Carmelitas Descalzos 5 Toledo'),
+                                  tooltip: 'Ruta con OpenStreetMap (GPS)',
+                                  onPressed: () => MapLauncher.openOsmRouteByAddress(
+                                    address: 'Cuesta de Carmelitas Descalzos 5 Toledo',
+                                    fallbackLat: 39.8588,
+                                    fallbackLng: -4.0250,
+                                  ),
                                 ),
                               ],
                             ),
@@ -266,9 +264,13 @@ class BudgetScreen extends ConsumerWidget {
                                   ),
                                   const SizedBox(height: 8),
                                   InkWell(
-                                    onTap: () => _openMaps('Parking Safont Toledo'),
+                                    onTap: () => MapLauncher.openOsmRoute(
+                                      destLat: 39.8606,
+                                      destLng: -4.0217,
+                                      title: 'Parking Safont Toledo',
+                                    ),
                                     child: const Text(
-                                      'Abrir Parking Safont en GPS →',
+                                      'Abrir ruta a Parking Safont en OpenStreetMap (GPS) →',
                                       style: TextStyle(
                                         fontSize: 12,
                                         fontWeight: FontWeight.w700,

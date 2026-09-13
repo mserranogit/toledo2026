@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:latlong2/latlong.dart';
 import '../../../core/theme/toledo_colors.dart';
+import '../../../core/utils/map_launcher.dart';
 import '../../../data/models/itinerary_item_model.dart';
 import '../../providers/itinerary_provider.dart';
 import '../../providers/audio_player_provider.dart';
 import '../../widgets/toledo_badge.dart';
 import '../../widgets/monument_detail_sheet.dart';
+
+// Provider para la vista del día (0: Lista de Tarjetas, 1: Vista de Mapa)
+final dayViewModeProvider = StateProvider<int>((ref) => 0);
 
 class ItineraryScreen extends ConsumerWidget {
   const ItineraryScreen({super.key});
@@ -15,6 +21,7 @@ class ItineraryScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final itineraryAsync = ref.watch(itineraryDaysProvider);
     final selectedDay = ref.watch(selectedDayIndexProvider);
+    final viewMode = ref.watch(dayViewModeProvider);
 
     return Scaffold(
       backgroundColor: ToledoColors.bgBody,
@@ -25,137 +32,92 @@ class ItineraryScreen extends ConsumerWidget {
             orElse: () => days.first,
           );
 
-          return CustomScrollView(
-            slivers: [
-              // Cabecera Hero Imperial
-              SliverToBoxAdapter(
-                child: Container(
-                  padding: const EdgeInsets.fromLTRB(20, 16, 20, 20),
-                  decoration: const BoxDecoration(
-                    color: ToledoColors.darkSlate,
-                    borderRadius: BorderRadius.vertical(bottom: Radius.circular(26)),
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      // Badge Fecha
-                      Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-                        decoration: BoxDecoration(
-                          color: ToledoColors.accent.withOpacity(0.18),
-                          borderRadius: BorderRadius.circular(20),
-                          border: Border.all(color: ToledoColors.accent.withOpacity(0.4)),
-                        ),
-                        child: Text(
-                          'GUÍA EXPERTA · 21 Y 22 DE OCTUBRE 2026',
-                          style: GoogleFonts.plusJakartaSans(
-                            fontSize: 10.5,
-                            fontWeight: FontWeight.w800,
-                            color: ToledoColors.accent,
-                            letterSpacing: 1.1,
+          return Column(
+            children: [
+              // Header de Selección de Día
+              Container(
+                padding: const EdgeInsets.fromLTRB(16, 12, 16, 14),
+                decoration: const BoxDecoration(
+                  color: ToledoColors.darkSlate,
+                  borderRadius: BorderRadius.vertical(bottom: Radius.circular(22)),
+                ),
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Flexible(
+                          child: Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                            decoration: BoxDecoration(
+                              color: ToledoColors.accent.withOpacity(0.18),
+                              borderRadius: BorderRadius.circular(20),
+                              border: Border.all(color: ToledoColors.accent.withOpacity(0.4)),
+                            ),
+                            child: Text(
+                              'GUÍA EXPERTA · 21 Y 22 OCTUBRE 2026',
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                              style: GoogleFonts.plusJakartaSans(
+                                fontSize: 9.5,
+                                fontWeight: FontWeight.w800,
+                                color: ToledoColors.accent,
+                                letterSpacing: 0.8,
+                              ),
+                            ),
                           ),
                         ),
-                      ),
-                      const SizedBox(height: 10),
+                        const SizedBox(width: 8),
+                        Text(
+                          currentDay.dateFormatted,
+                          style: GoogleFonts.cinzel(
+                            fontSize: 10.5,
+                            fontWeight: FontWeight.w700,
+                            color: Colors.white70,
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 10),
 
-                      Text(
-                        'Toledo Inolvidable',
-                        style: GoogleFonts.cinzel(
-                          fontSize: 24,
-                          fontWeight: FontWeight.w700,
-                          color: Colors.white,
-                          letterSpacing: 1.5,
-                        ),
+                    // Selector Segmentado de Días
+                    Container(
+                      padding: const EdgeInsets.all(4),
+                      decoration: BoxDecoration(
+                        color: Colors.white.withOpacity(0.08),
+                        borderRadius: BorderRadius.circular(16),
                       ),
-                      const SizedBox(height: 4),
-                      Text(
-                        'Historia, misterios, patrimonio y gastronomía toledana a tu ritmo.',
-                        style: GoogleFonts.plusJakartaSans(
-                          fontSize: 13,
-                          color: ToledoColors.textLight,
-                          height: 1.4,
-                        ),
-                      ),
-                      const SizedBox(height: 18),
-
-                      // Selector Segmentado de Días
-                      Container(
-                        padding: const EdgeInsets.all(4),
-                        decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(0.08),
-                          borderRadius: BorderRadius.circular(16),
-                        ),
-                        child: Row(
-                          children: [
-                            Expanded(
-                              child: _DayTabButton(
-                                title: 'Día 1 · Miér 21',
-                                subtitle: 'Consorcio & Judería',
-                                isSelected: selectedDay == 1,
-                                onTap: () => ref.read(selectedDayIndexProvider.notifier).state = 1,
-                              ),
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: _DayTabButton(
+                              title: 'Día 1 · Miér 21',
+                              subtitle: 'Consorcio & Judería',
+                              isSelected: selectedDay == 1,
+                              onTap: () => ref.read(selectedDayIndexProvider.notifier).state = 1,
                             ),
-                            const SizedBox(width: 6),
-                            Expanded(
-                              child: _DayTabButton(
-                                title: 'Día 2 · Juev 22',
-                                subtitle: 'Catedral & Orgaz',
-                                isSelected: selectedDay == 2,
-                                onTap: () => ref.read(selectedDayIndexProvider.notifier).state = 2,
-                              ),
+                          ),
+                          const SizedBox(width: 6),
+                          Expanded(
+                            child: _DayTabButton(
+                              title: 'Día 2 · Juev 22',
+                              subtitle: 'Catedral & Orgaz',
+                              isSelected: selectedDay == 2,
+                              onTap: () => ref.read(selectedDayIndexProvider.notifier).state = 2,
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
 
-              // Título y resumen del día seleccionado
-              SliverToBoxAdapter(
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(20, 18, 20, 8),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        currentDay.title,
-                        style: GoogleFonts.cinzel(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w700,
-                          color: ToledoColors.primaryDark,
-                          letterSpacing: 0.6,
-                        ),
-                      ),
-                      const SizedBox(height: 4),
-                      Text(
-                        currentDay.summary,
-                        style: GoogleFonts.plusJakartaSans(
-                          fontSize: 12.5,
-                          color: ToledoColors.textMuted,
-                          height: 1.4,
-                        ),
-                      ),
-                      const SizedBox(height: 12),
-                    ],
-                  ),
-                ),
-              ),
-
-              // Lista de Hitos (Timeline)
-              SliverPadding(
-                padding: const EdgeInsets.fromLTRB(16, 0, 16, 24),
-                sliver: SliverList(
-                  delegate: SliverChildBuilderDelegate(
-                    (context, index) {
-                      final item = currentDay.items[index];
-                      final isLast = index == currentDay.items.length - 1;
-                      return _TimelineCard(item: item, isLast: isLast);
-                    },
-                    childCount: currentDay.items.length,
-                  ),
-                ),
+              // Contenido según el modo de vista (0: Tarjetas, 1: Mapa del Día)
+              Expanded(
+                child: viewMode == 0
+                    ? _CardListView(currentDay: currentDay)
+                    : _DayMapView(currentDay: currentDay),
               ),
             ],
           );
@@ -165,6 +127,38 @@ class ItineraryScreen extends ConsumerWidget {
         ),
         error: (err, _) => Center(
           child: Text('Error cargando el itinerario: $err'),
+        ),
+      ),
+      bottomNavigationBar: Container(
+        decoration: const BoxDecoration(
+          border: Border(top: BorderSide(color: ToledoColors.border, width: 1)),
+        ),
+        child: BottomNavigationBar(
+          currentIndex: viewMode,
+          onTap: (index) => ref.read(dayViewModeProvider.notifier).state = index,
+          backgroundColor: Colors.white,
+          selectedItemColor: ToledoColors.primary,
+          unselectedItemColor: ToledoColors.textMuted,
+          selectedLabelStyle: GoogleFonts.plusJakartaSans(
+            fontSize: 12,
+            fontWeight: FontWeight.w800,
+          ),
+          unselectedLabelStyle: GoogleFonts.plusJakartaSans(
+            fontSize: 12,
+            fontWeight: FontWeight.w600,
+          ),
+          items: const [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.style_outlined),
+              activeIcon: Icon(Icons.style_rounded),
+              label: 'Lista de Tarjetas',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.map_outlined),
+              activeIcon: Icon(Icons.map_rounded),
+              label: 'Vista de Mapa',
+            ),
+          ],
         ),
       ),
     );
@@ -191,7 +185,7 @@ class _DayTabButton extends StatelessWidget {
       borderRadius: BorderRadius.circular(12),
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 200),
-        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 8),
+        padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
         decoration: BoxDecoration(
           color: isSelected ? ToledoColors.accent : Colors.transparent,
           borderRadius: BorderRadius.circular(12),
@@ -210,22 +204,263 @@ class _DayTabButton extends StatelessWidget {
             Text(
               title,
               style: GoogleFonts.cinzel(
-                fontSize: 13,
+                fontSize: 12.5,
                 fontWeight: FontWeight.w700,
                 color: isSelected ? Colors.white : Colors.white70,
               ),
             ),
-            const SizedBox(height: 2),
+            const SizedBox(height: 1),
             Text(
               subtitle,
               style: TextStyle(
-                fontSize: 10.5,
+                fontSize: 10,
                 color: isSelected ? Colors.white.withOpacity(0.9) : Colors.white54,
               ),
             ),
           ],
         ),
       ),
+    );
+  }
+}
+
+class _CardListView extends StatelessWidget {
+  final ItineraryDayModel currentDay;
+
+  const _CardListView({required this.currentDay});
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      padding: const EdgeInsets.fromLTRB(16, 16, 16, 80),
+      children: [
+        // Título y resumen del día seleccionado
+        Padding(
+          padding: const EdgeInsets.only(bottom: 14),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                currentDay.title,
+                style: GoogleFonts.cinzel(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w700,
+                  color: ToledoColors.primaryDark,
+                  letterSpacing: 0.6,
+                ),
+              ),
+              const SizedBox(height: 4),
+              Text(
+                currentDay.summary,
+                style: GoogleFonts.plusJakartaSans(
+                  fontSize: 12.5,
+                  color: ToledoColors.textMuted,
+                  height: 1.4,
+                ),
+              ),
+            ],
+          ),
+        ),
+
+        // Lista de Tarjetas del Día
+        ...List.generate(currentDay.items.length, (index) {
+          final item = currentDay.items[index];
+          final isLast = index == currentDay.items.length - 1;
+          return _TimelineCard(item: item, isLast: isLast);
+        }),
+      ],
+    );
+  }
+}
+
+class _DayMapView extends StatefulWidget {
+  final ItineraryDayModel currentDay;
+
+  const _DayMapView({required this.currentDay});
+
+  @override
+  State<_DayMapView> createState() => _DayMapViewState();
+}
+
+class _DayMapViewState extends State<_DayMapView> {
+  final MapController _mapController = MapController();
+  LatLng? _userLocation;
+  bool _isLocating = false;
+
+  @override
+  Widget build(BuildContext context) {
+    final points = widget.currentDay.items.map((i) => LatLng(i.lat, i.lng)).toList();
+    final LatLng center = points.isNotEmpty ? points.first : const LatLng(39.8571, -4.0238);
+
+    final List<Polyline> polylines = [
+      Polyline(
+        points: points,
+        strokeWidth: 4.5,
+        color: ToledoColors.primary.withOpacity(0.85),
+      ),
+    ];
+
+    final List<Marker> markers = [];
+
+    for (int i = 0; i < widget.currentDay.items.length; i++) {
+      final item = widget.currentDay.items[i];
+      markers.add(
+        Marker(
+          point: LatLng(item.lat, item.lng),
+          width: 38,
+          height: 38,
+          child: GestureDetector(
+            onTap: () => MonumentDetailSheet.show(context, item),
+            child: Container(
+              decoration: BoxDecoration(
+                color: ToledoColors.primary,
+                shape: BoxShape.circle,
+                border: Border.all(color: Colors.white, width: 2.2),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.28),
+                    blurRadius: 5,
+                  ),
+                ],
+              ),
+              child: Center(
+                child: Text(
+                  '${i + 1}',
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 13,
+                    fontWeight: FontWeight.w800,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
+      );
+    }
+
+    if (_userLocation != null) {
+      markers.add(
+        Marker(
+          point: _userLocation!,
+          width: 38,
+          height: 38,
+          child: Container(
+            decoration: BoxDecoration(
+              color: Colors.blue.withOpacity(0.25),
+              shape: BoxShape.circle,
+            ),
+            child: Center(
+              child: Container(
+                width: 18,
+                height: 18,
+                decoration: BoxDecoration(
+                  color: Colors.blue.shade600,
+                  shape: BoxShape.circle,
+                  border: Border.all(color: Colors.white, width: 2.5),
+                  boxShadow: const [
+                    BoxShadow(color: Colors.black26, blurRadius: 4),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ),
+      );
+    }
+
+    return Stack(
+      children: [
+        FlutterMap(
+          mapController: _mapController,
+          options: MapOptions(
+            initialCenter: center,
+            initialZoom: 15.2,
+            minZoom: 11.0,
+            maxZoom: 18.0,
+          ),
+          children: [
+            TileLayer(
+              urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+              userAgentPackageName: 'es.toledo2026.guia',
+              tileProvider: NetworkTileProvider(),
+            ),
+            PolylineLayer(polylines: polylines),
+            MarkerLayer(markers: markers),
+          ],
+        ),
+
+        // Cartel flotante indicando el itinerario del día
+        Positioned(
+          top: 12,
+          left: 14,
+          right: 14,
+          child: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+            decoration: BoxDecoration(
+              color: Colors.white.withOpacity(0.95),
+              borderRadius: BorderRadius.circular(14),
+              border: Border.all(color: ToledoColors.border),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.12),
+                  blurRadius: 6,
+                  offset: const Offset(0, 2),
+                ),
+              ],
+            ),
+            child: Row(
+              children: [
+                const Icon(Icons.place_rounded, color: ToledoColors.primary, size: 18),
+                const SizedBox(width: 8),
+                Expanded(
+                  child: Text(
+                    '${widget.currentDay.items.length} Paradas · Toca cualquier número para ver detalles',
+                    style: GoogleFonts.plusJakartaSans(
+                      fontSize: 11.5,
+                      fontWeight: FontWeight.w700,
+                      color: ToledoColors.primaryDark,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+
+        // Botón GPS
+        Positioned(
+          right: 16,
+          bottom: 20,
+          child: FloatingActionButton.small(
+            heroTag: 'btn_day_map_gps',
+            backgroundColor: Colors.white,
+            foregroundColor: Colors.blue.shade700,
+            tooltip: 'Mi Ubicación GPS',
+            onPressed: () async {
+              setState(() => _isLocating = true);
+              final pos = await MapLauncher.getCurrentLocation();
+              if (pos != null && mounted) {
+                final userLatLng = LatLng(pos.latitude, pos.longitude);
+                setState(() {
+                  _userLocation = userLatLng;
+                  _isLocating = false;
+                });
+                _mapController.move(userLatLng, 16.5);
+              } else if (mounted) {
+                setState(() => _isLocating = false);
+              }
+            },
+            child: _isLocating
+                ? const SizedBox(
+                    width: 16,
+                    height: 16,
+                    child: CircularProgressIndicator(strokeWidth: 2, color: Colors.blue),
+                  )
+                : const Icon(Icons.my_location_rounded),
+          ),
+        ),
+      ],
     );
   }
 }

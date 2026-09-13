@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:url_launcher/url_launcher.dart';
 import '../../core/theme/toledo_colors.dart';
+import '../../core/utils/map_launcher.dart';
 import '../../data/models/itinerary_item_model.dart';
 import '../providers/audio_player_provider.dart';
 import 'toledo_badge.dart';
@@ -20,13 +20,6 @@ class MonumentDetailSheet extends ConsumerWidget {
       backgroundColor: Colors.transparent,
       builder: (context) => MonumentDetailSheet(item: item),
     );
-  }
-
-  Future<void> _openGoogleMaps(double lat, double lng, String label) async {
-    final uri = Uri.parse('https://www.google.com/maps/search/?api=1&query=$lat,$lng');
-    if (await canLaunchUrl(uri)) {
-      await launchUrl(uri, mode: LaunchMode.externalApplication);
-    }
   }
 
   @override
@@ -304,19 +297,23 @@ class MonumentDetailSheet extends ConsumerWidget {
                     const SizedBox(height: 20),
                   ],
 
-                  // Botón Abrir en Google Maps exterior
+                  // Botón Abrir en OpenStreetMap exterior
                   SizedBox(
                     width: double.infinity,
                     child: OutlinedButton.icon(
                       icon: const Icon(Icons.navigation_outlined, size: 18),
-                      label: const Text('Cómo llegar con Google Maps'),
+                      label: const Text('Cómo llegar con OpenStreetMap (GPS)'),
                       style: OutlinedButton.styleFrom(
                         foregroundColor: ToledoColors.primary,
                         side: const BorderSide(color: ToledoColors.primary, width: 1.5),
                         padding: const EdgeInsets.symmetric(vertical: 13),
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
                       ),
-                      onPressed: () => _openGoogleMaps(item.lat, item.lng, item.title),
+                      onPressed: () => MapLauncher.openOsmRoute(
+                        destLat: item.lat,
+                        destLng: item.lng,
+                        title: item.title,
+                      ),
                     ),
                   ),
                 ],
