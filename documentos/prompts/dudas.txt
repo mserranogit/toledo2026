@@ -53,3 +53,22 @@ en este apartado del html:
 añade un mapa del recorrido que has puesto en audios\texto\paseo-rincones-miradores.txt
 
 
+quiero las siguientes modificaciones en la version mobile
+
+para el día 21 de octubre:
+1. Quitar el apartado "Circuito a Pie desde la Ermita del Valle: Peña del Rey Moro & Cerro del Bú"
+2. Primera etapa del día será el aparcamiento hora de llegada 10:00
+3. Del aparcamiento iremos a l Centro de Gestión de Recursos Culturales para iniciarlas visitas guiadas gratuitas, hora de llegada 10:30
+
+CENTRO DE GESTIÓN DE RECURSOS CULTURALES
+Plaza Amador de los Ríos, Toledo
+Teléfono: 925 25 30 80
+M-S: 10:00 a 14:00, 16:00 a 20:00
+
+4.crea un apartado de restaurantes e incluye los que aparecen en:
+
+https://lamaletainquieta.com/comer-barato-toledo/
+
+añade los mapas correspondientes
+
+
