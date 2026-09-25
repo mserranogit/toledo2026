@@ -5,31 +5,31 @@
       "dayNumber": 1,
       "dateFormatted": "Miércoles, 21 de Octubre 2026",
       "title": "Llegada, Rutas del Consorcio, Gastronomía y Misterios Subterráneos",
-      "summary": "Llegada al Parking Safont, Centro de Gestión de Recursos Culturales, conventos de clausura, selección de restaurantes baratos (12€–15€), Judería Mayor y tour nocturno subterráneo.",
+      "summary": "Llegada al Parking Circo Romano, Centro de Gestión de Recursos Culturales, conventos de clausura, selección de restaurantes baratos (12€–15€), Judería Mayor y tour nocturno subterráneo.",
       "items": [
         {
           "id": "item-d1-1",
           "timeSlot": "10:00 – 10:30",
-          "title": "Llegada al Parking Safont & Escaleras Mecánicas",
+          "title": "Llegada al Parking Circo Romano & Escaleras de Recaredo",
           "category": "Aparcamiento & Acceso",
           "badgeText": "GRATUITO",
           "badgeType": "free",
           "duration": "30 min",
-          "distance": "Parking Safont · Escaleras Miradero",
+          "distance": "Parking Circo Romano · Escaleras Recaredo",
           "cost": "0,00 €",
           "isFree": true,
-          "locationName": "Parking Gratuito de Safont",
-          "lat": 39.8628,
-          "lng": -4.0189,
+          "locationName": "Parking Gratuito Circo Romano",
+          "lat": 39.8625,
+          "lng": -4.0315,
           "audioId": null,
-          "shortDescription": "Llegada a las 10:00 h al aparcamiento disuasorio oficial junto al río Tajo (+1.000 plazas, gratuito 24/7). Ubicado fuera de las cámaras de la ZBE para evitar multas de tráfico. Conexión peatonal directa en 2 min mediante las Escaleras Mecánicas de Safont hasta el Paseo del Miradero.",
+          "shortDescription": "Llegada a las 10:00 h al aparcamiento público y gratuito junto al Circo Romano (Av. Carlos III / Paseo del Circo Romano, junto a la Venta de Aires). Ubicado fuera de la muralla y exento de las cámaras de la ZBE para evitar multas de tráfico. Conexión peatonal directa en 4 min con las Escaleras Mecánicas de Recaredo para ascender al Casco Histórico en 2 min.",
           "highlights": [
-            "Llegada en coche a las 10:00 h a Ronda de Juanelo",
-            "Estacionamiento gratuito 24/7, vigilado e iluminado",
-            "Escaleras mecánicas gratuitas: Salvan 50 metros de desnivel en 2 min",
+            "Llegada en coche a las 10:00 h al Paseo del Circo Romano",
+            "Estacionamiento público y gratuito 24/7 en amplia explanada exterior",
+            "Escaleras mecánicas de Recaredo: Salvan el desnivel del peñón en 2 min",
             "Evita sanciones automáticas de la Zona de Bajas Emisiones (ZBE)"
           ],
-          "tips": "No intentes entrar en coche al casco histórico. Aparca en Safont y sube por las escaleras mecánicas."
+          "tips": "No intentes entrar en coche al casco histórico. Aparca en el Circo Romano y sube por las escaleras de Recaredo."
         },
         {
           "id": "item-d1-2",
@@ -39,7 +39,7 @@
           "badgeText": "VISITAS GRATUITAS",
           "badgeType": "free",
           "duration": "30 min",
-          "distance": "850 m a pie desde Safont (12 min)",
+          "distance": "850 m a pie desde Circo Romano (12-14 min)",
           "cost": "0,00 €",
           "isFree": true,
           "locationName": "Plaza Amador de los Ríos, Toledo",
@@ -271,7 +271,7 @@
           "audioId": null,
           "shortDescription": "Traslado en coche desde Toledo a la villa medieval de Orgaz por la CM-42 / N-401. Almuerzo en Mesón Las Bodegas degustando pisto manchego, tiznao, migas del pastor y cordero lechal.",
           "highlights": [
-            "Ruta rápida por autovía (30 min desde el parking Safont)",
+            "Ruta rápida por autovía (30 min desde el parking Circo Romano)",
             "Orgaz: Pueblo de empedrado blanco y arquitectura noble tradicional",
             "Menú auténtico con cocina manchega tradicional a precio asequible"
           ],

@@ -23,4 +23,7 @@ no lo instales en el adb
 dame el link de descarga para mi telefono movil
 
 
+para la versión mobile:
+en la tarjeta Judería Mayor quitar el botón "escuchar" 
+
 

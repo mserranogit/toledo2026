@@ -7,7 +7,7 @@ final mapPointsDataProvider = FutureProvider<MapPointsDataModel>((ref) async {
   return dataSource.getMapPointsData();
 });
 
-// Ruta seleccionada actualmente (0: Llegada Safont ➔ Centro, 1: Judería Mayor, 2: Restaurantes Baratos, -1: Todos los puntos)
+// Ruta seleccionada actualmente (0: Llegada Circo Romano ➔ Centro, 1: Judería Mayor, 2: Restaurantes Baratos, -1: Todos los puntos)
 final selectedMapRouteIndexProvider = StateProvider<int>((ref) => 0);
 
 class MapCenterTarget {

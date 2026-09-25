@@ -7,7 +7,7 @@
     {
       "id": "b-1",
       "day": "Día 1 Mañana",
-      "concept": "Parking Safont & Centro de Recursos Culturales",
+      "concept": "Parking Circo Romano & Centro de Recursos Culturales",
       "category": "Transporte & Cultura",
       "priceOfficial": 0,
       "priceActual": 0,
@@ -127,12 +127,12 @@
     {
       "id": "b-13",
       "day": "Parking",
-      "concept": "Parking Safont Toledo + Escaleras Mecánicas",
+      "concept": "Parking Circo Romano Toledo + Escaleras Recaredo",
       "category": "Transporte",
       "priceOfficial": 24,
       "priceActual": 0,
       "isFree": true,
-      "notes": "Disuasorio vigilado junto al Tajo (Gratis)"
+      "notes": "Disuasorio gratuito junto al Circo Romano y Venta de Aires"
     }
   ]
 }

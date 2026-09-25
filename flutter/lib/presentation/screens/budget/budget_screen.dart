@@ -223,7 +223,7 @@ class BudgetScreen extends ConsumerWidget {
                             ),
                             const SizedBox(height: 10),
                             const Text(
-                              'Alojamiento confirmado para el grupo. Tarifa: ~38,26 € por persona/noche. Ubicado en el corazón del casco a 350 m de la salida de las escaleras mecánicas del Miradero.',
+                              'Alojamiento confirmado para el grupo. Tarifa: ~38,26 € por persona/noche. Ubicado en el corazón del casco a pocos minutos de la salida de las escaleras mecánicas de Recaredo.',
                               style: TextStyle(fontSize: 12.5, color: ToledoColors.textMain, height: 1.4),
                             ),
                           ],
@@ -231,7 +231,7 @@ class BudgetScreen extends ConsumerWidget {
                       ),
                       const SizedBox(height: 12),
 
-                      // Tarjeta Parking Safont & ZBE
+                      // Tarjeta Parking Circo Romano & ZBE
                       Container(
                         padding: const EdgeInsets.all(16),
                         decoration: BoxDecoration(
@@ -249,7 +249,7 @@ class BudgetScreen extends ConsumerWidget {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   const Text(
-                                    'PARKING SAFONT (RECOMENDADO)',
+                                    'PARKING CIRCO ROMANO (RECOMENDADO)',
                                     style: TextStyle(
                                       fontSize: 12,
                                       fontWeight: FontWeight.w800,
@@ -259,18 +259,18 @@ class BudgetScreen extends ConsumerWidget {
                                   ),
                                   const SizedBox(height: 4),
                                   const Text(
-                                    'El casco histórico tiene cámaras ZBE con multas automáticas. Deja el coche gratis en el Parking Safont (junto al río) y sube cómodamente al centro por las escaleras mecánicas del Miradero (3 minutos a pie).',
+                                    'El casco histórico tiene cámaras ZBE con multas automáticas. Deja el coche gratis en el Parking del Circo Romano (junto al parque arqueológico y Venta de Aires) y sube cómodamente al centro por las escaleras mecánicas de Recaredo (a pie en pocos minutos).',
                                     style: TextStyle(fontSize: 12, color: ToledoColors.badgePriceText, height: 1.4),
                                   ),
                                   const SizedBox(height: 8),
                                   InkWell(
                                     onTap: () => MapLauncher.openOsmRoute(
-                                      destLat: 39.8606,
-                                      destLng: -4.0217,
-                                      title: 'Parking Safont Toledo',
+                                      destLat: 39.8625,
+                                      destLng: -4.0315,
+                                      title: 'Parking Circo Romano Toledo',
                                     ),
                                     child: const Text(
-                                      'Abrir ruta a Parking Safont en OpenStreetMap (GPS) →',
+                                      'Abrir ruta a Parking Circo Romano en OpenStreetMap (GPS) →',
                                       style: TextStyle(
                                         fontSize: 12,
                                         fontWeight: FontWeight.w700,

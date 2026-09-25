@@ -129,7 +129,7 @@ abstract class ToledoColors {
      - **Ruta 1: Ermita del Valle ➔ Peña del Rey Moro ➔ Cerro del Bú** (1,28 km a pie).
      - **Ruta 2: Judería Mayor & Miradores** (850 m a pie, 6 paradas).
      - **Ruta 3: En Coche a Orgaz & Los Hitos** (Trayecto interurbano).
-     - **Puntos Críticos:** Parking Safont, escaleras mecánicas del Miradero y Casa de la Mezquita.
+     - **Puntos Críticos:** Parking Circo Romano, escaleras mecánicas de Recaredo y Casa de la Mezquita.
    - Marcadores personalizados con iconos temáticos (🅿️, 🥾, ⛪, 🕍, 👑, 🏛️).
    - Botón de geolocalización del usuario en tiempo real sobre el mapa de Toledo.
    - Modo fallback con esquemas vectoriales topológicos SVG de alto contraste.
@@ -148,7 +148,7 @@ abstract class ToledoColors {
 4. **💰 Presupuesto & Guía Práctica:**
    - Resumen total por persona: **129,26 €** (91,00 € actividades + 38,26 € alojamiento).
    - Checkbox interactivo: el viajero puede marcar qué actividades ya ha pagado o reservado.
-   - Tarjeta de Alojamiento (Casa de la Mezquita / Casa de las Meninas) y consejos de Parking (Safont + Escaleras Mecánicas).
+   - Tarjeta de Alojamiento (Casa de la Mezquita / Casa de las Meninas) y consejos de Parking (Circo Romano + Escaleras de Recaredo).
 
 ---
 
@@ -183,8 +183,8 @@ TileLayer(
 ```dart
 class ToledoGeoPoints {
   // Parkings & Acceso
-  static const LatLng parkingSafont = LatLng(39.8628, -4.0189);
-  static const LatLng escalerasMecanicas = LatLng(39.8606, -4.0217);
+  static const LatLng parkingCircoRomano = LatLng(39.8625, -4.0315);
+  static const LatLng escalerasRecaredo = LatLng(39.8612, -4.0280);
   static const LatLng parkingErmitaValle = LatLng(39.8516, -4.0178);
   static const LatLng casaMezquita = LatLng(39.8598, -4.0242);
 
@@ -433,7 +433,7 @@ flutter:
 ### Fase 5: Pantallas de Itinerario, Alojamiento y Presupuesto
 - [ ] Desarrollar la pantalla de Itinerario con selector segmentado de días y tarjetas de monumento.
 - [ ] Desarrollar la vista de presupuesto interactivo con checkboxes de estado de pago.
-- [ ] Crear la sección informativa de ZBE, Parking Safont y acceso a Casa de la Mezquita.
+- [ ] Crear la sección informativa de ZBE, Parking Circo Romano y acceso a Casa de la Mezquita.
 
 ### Fase 6: Pruebas de Rendimiento y Validación Offline
 - [ ] Comprobación exhaustiva en Modo Avión (cero peticiones de red).

@@ -1,8 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const rootDir = 'i:/___IA_viajes/toledo';
-const flutterDataDir = path.join(rootDir, 'flutter/assets/data');
+const rootDir = path.resolve(__dirname, '..');
+const flutterDataDir = path.join(__dirname, 'assets/data');
 
 // 1. GENERATE audioguides.json
 const audioDefs = [
@@ -110,31 +110,31 @@ const itinerary = {
       dayNumber: 1,
       dateFormatted: 'Miércoles, 21 de Octubre 2026',
       title: 'Llegada, Rutas del Consorcio, Gastronomía y Misterios Subterráneos',
-      summary: 'Llegada al Parking Safont, Centro de Gestión de Recursos Culturales, conventos de clausura, selección de restaurantes baratos (12€–15€), Judería Mayor y tour nocturno subterráneo.',
+      summary: 'Llegada al Parking Circo Romano, Centro de Gestión de Recursos Culturales, conventos de clausura, selección de restaurantes baratos (12€–15€), Judería Mayor y tour nocturno subterráneo.',
       items: [
         {
           id: 'item-d1-1',
           timeSlot: '10:00 – 10:30',
-          title: 'Llegada al Parking Safont & Escaleras Mecánicas',
+          title: 'Llegada al Parking Circo Romano & Escaleras de Recaredo',
           category: 'Aparcamiento & Acceso',
           badgeText: 'GRATUITO',
           badgeType: 'free',
           duration: '30 min',
-          distance: 'Parking Safont · Escaleras Miradero',
+          distance: 'Parking Circo Romano · Escaleras Recaredo',
           cost: '0,00 €',
           isFree: true,
-          locationName: 'Parking Gratuito de Safont',
-          lat: 39.8628,
-          lng: -4.0189,
+          locationName: 'Parking Gratuito Circo Romano',
+          lat: 39.8625,
+          lng: -4.0315,
           audioId: null,
-          shortDescription: 'Llegada a las 10:00 h al aparcamiento disuasorio oficial junto al río Tajo (+1.000 plazas, gratuito 24/7). Ubicado fuera de las cámaras de la ZBE para evitar multas de tráfico. Conexión peatonal directa en 2 min mediante las Escaleras Mecánicas de Safont hasta el Paseo del Miradero.',
+          shortDescription: 'Llegada a las 10:00 h al aparcamiento público y gratuito junto al Circo Romano (Av. Carlos III / Paseo del Circo Romano, junto a la Venta de Aires). Ubicado fuera de la muralla y exento de las cámaras de la ZBE para evitar multas de tráfico. Conexión peatonal directa en 4 min con las Escaleras Mecánicas de Recaredo para ascender al Casco Histórico en 2 min.',
           highlights: [
-            'Llegada en coche a las 10:00 h a Ronda de Juanelo',
-            'Estacionamiento gratuito 24/7, vigilado e iluminado',
-            'Escaleras mecánicas gratuitas: Salvan 50 metros de desnivel en 2 min',
+            'Llegada en coche a las 10:00 h al Paseo del Circo Romano',
+            'Estacionamiento público y gratuito 24/7 en amplia explanada exterior',
+            'Escaleras mecánicas de Recaredo: Salvan el desnivel del peñón en 2 min',
             'Evita sanciones automáticas de la Zona de Bajas Emisiones (ZBE)'
           ],
-          tips: 'No intentes entrar en coche al casco histórico. Aparca en Safont y sube por las escaleras mecánicas.'
+          tips: 'No intentes entrar en coche al casco histórico. Aparca en el Circo Romano y sube por las escaleras de Recaredo.'
         },
         {
           id: 'item-d1-2',
@@ -144,7 +144,7 @@ const itinerary = {
           badgeText: 'VISITAS GRATUITAS',
           badgeType: 'free',
           duration: '30 min',
-          distance: '850 m a pie desde Safont (12 min)',
+          distance: '850 m a pie desde Circo Romano (12-14 min)',
           cost: '0,00 €',
           isFree: true,
           locationName: 'Plaza Amador de los Ríos, Toledo',
@@ -376,7 +376,7 @@ const itinerary = {
           audioId: null,
           shortDescription: 'Traslado en coche desde Toledo a la villa medieval de Orgaz por la CM-42 / N-401. Almuerzo en Mesón Las Bodegas degustando pisto manchego, tiznao, migas del pastor y cordero lechal.',
           highlights: [
-            'Ruta rápida por autovía (30 min desde el parking Safont)',
+            'Ruta rápida por autovía (30 min desde el parking Circo Romano)',
             'Orgaz: Pueblo de empedrado blanco y arquitectura noble tradicional',
             'Menú auténtico con cocina manchega tradicional a precio asequible'
           ],
@@ -423,7 +423,7 @@ const budget = {
     {
       id: 'b-1',
       day: 'Día 1 Mañana',
-      concept: 'Parking Safont & Centro de Recursos Culturales',
+      concept: 'Parking Circo Romano & Centro de Recursos Culturales',
       category: 'Transporte & Cultura',
       priceOfficial: 0.00,
       priceActual: 0.00,
@@ -543,12 +543,12 @@ const budget = {
     {
       id: 'b-13',
       day: 'Parking',
-      concept: 'Parking Safont Toledo + Escaleras Mecánicas',
+      concept: 'Parking Circo Romano Toledo + Escaleras Recaredo',
       category: 'Transporte',
       priceOfficial: 24.00,
       priceActual: 0.00,
       isFree: true,
-      notes: 'Disuasorio vigilado junto al Tajo (Gratis)'
+      notes: 'Disuasorio gratuito junto al Circo Romano y Venta de Aires'
     }
   ]
 };
@@ -651,17 +651,16 @@ const mapPoints = {
   routes: [
     {
       id: 'route-llegada',
-      title: 'Llegada: Parking Safont ➔ Escaleras Miradero ➔ Plaza Amador de los Ríos',
+      title: 'Llegada: Parking Circo Romano ➔ Escaleras Recaredo ➔ Plaza Amador de los Ríos',
       color: '#0284C7',
       distance: '850 m',
-      time: '15 min',
+      time: '14 min',
       points: [
-        { lat: 39.8628, lng: -4.0189, title: '1. Parking Safont (10:00 h)', type: 'parking' },
-        { lat: 39.8606, lng: -4.0217, title: '2. Escaleras Mecánicas Safont', type: 'access' },
-        { lat: 39.8601, lng: -4.0219, title: '3. Salida Miradero', type: 'mirador' },
-        { lat: 39.8595, lng: -4.0215, title: '4. Plaza de Zocodover', type: 'monument' },
-        { lat: 39.8587, lng: -4.0252, title: '5. C. Recursos Culturales (10:30 h)', type: 'monument' },
-        { lat: 39.8603, lng: -4.0275, title: '6. Convento Sto. Domingo (11:00 h)', type: 'church' }
+        { lat: 39.8625, lng: -4.0315, title: '1. Parking Circo Romano (10:00 h)', type: 'parking' },
+        { lat: 39.8612, lng: -4.0280, title: '2. Escaleras Mecánicas Recaredo', type: 'access' },
+        { lat: 39.8605, lng: -4.0272, title: '3. Salida Recaredo / Diputación', type: 'mirador' },
+        { lat: 39.8603, lng: -4.0275, title: '4. Convento Sto. Domingo El Real', type: 'church' },
+        { lat: 39.8587, lng: -4.0252, title: '5. C. Recursos Culturales (10:30 h)', type: 'monument' }
       ]
     },
     {
@@ -681,8 +680,8 @@ const mapPoints = {
     }
   ],
   landmarks: [
-    { id: 'safont', title: 'Parking Gratuito Safont (Llegada 10:00 h)', category: 'Parking', lat: 39.8628, lng: -4.0189, icon: 'local_parking' },
-    { id: 'escaleras', title: 'Escaleras Mecánicas del Miradero', category: 'Acceso', lat: 39.8606, lng: -4.0217, icon: 'escalator' },
+    { id: 'circo-romano', title: 'Parking Gratuito Circo Romano (Llegada 10:00 h)', category: 'Parking', lat: 39.8625, lng: -4.0315, icon: 'local_parking' },
+    { id: 'escaleras-recaredo', title: 'Escaleras Mecánicas de Recaredo', category: 'Acceso', lat: 39.8612, lng: -4.0280, icon: 'escalator' },
     { id: 'centro-recursos', title: 'Centro Gestión Recursos Culturales (10:30 h)', category: 'Cultura', lat: 39.8587, lng: -4.0252, icon: 'account_balance' },
     { id: 'hotel', title: 'Casa de la Mezquita (Alojamiento)', category: 'Alojamiento', lat: 39.8598, lng: -4.0242, icon: 'hotel' },
     { id: 'zocodover', title: 'Plaza de Zocodover', category: 'Centro', lat: 39.8595, lng: -4.0215, icon: 'place' },

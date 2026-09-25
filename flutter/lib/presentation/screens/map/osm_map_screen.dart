@@ -22,7 +22,7 @@ class _OsmMapScreenState extends ConsumerState<OsmMapScreen> {
   bool _isLocating = false;
 
   static const LatLng _toledoCenter = LatLng(39.8571, -4.0238);
-  static const LatLng _safontCenter = LatLng(39.8606, -4.0217);
+  static const LatLng _circoRomanoCenter = LatLng(39.8625, -4.0315);
 
   void _centerOn(LatLng point, double zoom) {
     _mapController.move(point, zoom);
@@ -378,11 +378,11 @@ class _OsmMapScreenState extends ConsumerState<OsmMapScreen> {
                     ),
                     const SizedBox(height: 8),
                     FloatingActionButton.small(
-                      heroTag: 'btn_center_safont',
+                      heroTag: 'btn_center_circo_romano',
                       backgroundColor: Colors.white,
                       foregroundColor: Colors.blue.shade700,
-                      tooltip: 'Centrar en Parking Safont',
-                      onPressed: () => _centerOn(_safontCenter, 15.8),
+                      tooltip: 'Centrar en Parking Circo Romano',
+                      onPressed: () => _centerOn(_circoRomanoCenter, 15.8),
                       child: const Icon(Icons.local_parking_rounded),
                     ),
                   ],
