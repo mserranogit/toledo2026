@@ -18,3 +18,8 @@ que tenga un diseño moderno y atractivo , aspecto premium
 añade en el plan que los mapas se utilizará la api gratuita de openstreet maps
 el codigo se deberá crear en la carpeta flutter ya creada
  
+
+
+ actualiza la version mobile para que tenga la misma informacion que la version html. y mantenga los estilos y colores que hay en la version mobile
+añade los cambios que hemos hecho en el html
+dame un link para descargar el apk e instalarlo en mi movil
