@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toledo Imperial 2026 | Descarga la App Móvil Oficial</title>
+  <meta name="description" content="Descarga la app móvil para Android de Toledo Imperial 2026. Guía completa, 6 audioguías offline, mapas OpenStreetMap, rutas y restaurantes económicos.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0D131A;
+      --card-bg: #161F2C;
+      --card-border: #2A3649;
+      --gold: #D4AF37;
+      --gold-dark: #B8962E;
+      --crimson: #852221;
+      --text-main: #F1F5F9;
+      --text-muted: #94A3B8;
+      --accent-green: #10B981;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: radial-gradient(circle at 50% 20%, #1A2636 0%, var(--bg-dark) 80%);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 16px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 520px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .hero-card {
+      background: var(--card-bg);
+      border: 1.5px solid var(--gold);
+      border-radius: 24px;
+      padding: 36px 24px;
+      text-align: center;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.65), 0 0 35px rgba(212, 175, 55, 0.12);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    .shield-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      background: rgba(212, 175, 55, 0.12);
+      border: 2px solid var(--gold);
+      border-radius: 50%;
+      margin-bottom: 16px;
+      font-size: 28px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: rgba(212, 175, 55, 0.15);
+      color: var(--gold);
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: #FFFFFF;
+      margin-bottom: 6px;
+    }
+
+    .subtitle {
+      color: var(--gold);
+      font-size: 13.5px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .desc {
+      color: var(--text-muted);
+      font-size: 14.5px;
+      line-height: 1.55;
+      margin-bottom: 24px;
+    }
+
+    .features-pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 26px;
+    }
+
+    .pill {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 6px 12px;
+      border-radius: 12px;
+      font-size: 12px;
+      color: #CBD5E1;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .btn-download {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: #0D131A;
+      font-size: 17px;
+      font-weight: 800;
+      text-decoration: none;
+      padding: 16px 24px;
+      border-radius: 14px;
+      box-shadow: 0 8px 22px rgba(212, 175, 55, 0.35);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      letter-spacing: 0.3px;
+    }
+
+    .btn-download:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(212, 175, 55, 0.45);
+    }
+
+    .btn-download:active {
+      transform: translateY(1px);
+    }
+
+    .btn-web {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.06);
+      color: #E2E8F0;
+      border: 1px solid var(--card-border);
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 12px 20px;
+      border-radius: 12px;
+      margin-top: 10px;
+      transition: background 0.15s ease;
+    }
+
+    .btn-web:hover {
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .qr-box {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid var(--card-border);
+    }
+
+    .qr-label {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .qr-frame {
+      background: white;
+      padding: 12px;
+      border-radius: 18px;
+      display: inline-block;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    }
+
+    .qr-frame img {
+      display: block;
+      width: 170px;
+      height: 170px;
+    }
+
+    .info-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 22px 20px;
+    }
+
+    .info-title {
+      font-family: 'Cinzel', serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .steps-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .step-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 13.5px;
+      line-height: 1.45;
+      color: #CBD5E1;
+    }
+
+    .step-number {
+      background: var(--crimson);
+      color: white;
+      font-weight: 800;
+      font-size: 12px;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .footer-note {
+      text-align: center;
+      font-size: 12px;
+      color: #64748B;
+      padding-top: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="hero-card">
+      <div class="shield-badge">🛡️</div>
+      <div class="tag">VERSIÓN MÓVIL 1.1.0 · ANDROID</div>
+      <h1>TOLEDO 2026</h1>
+      <div class="subtitle">Guía de Viaje Imperial</div>
+      <p class="desc">
+        Tu itinerario interactivo completo con 6 audioguías offline, mapa OpenStreetMap con GPS, aparcamiento gratuito del Circo Romano y restaurantes económicos.
+      </p>
+
+      <div class="features-pill-row">
+        <span class="pill">🎧 6 Audioguías Offline</span>
+        <span class="pill">🗺️ Mapa OSM con GPS</span>
+        <span class="pill">📶 100% Sin Internet</span>
+        <span class="pill">💰 Control de Gastos</span>
+      </div>
+
+      <a href="https://github.com/mserranogit/toledo2026/releases/download/v1.1.0/toledo-2026.apk" class="btn-download">
+        <span>📥</span>
+        <span>Descargar APK para Android (65 MB)</span>
+      </a>
+
+      <a href="html/visita-1/index.html" class="btn-web">
+        <span>🌐</span>
+        <span>Abrir Guía Web (iPhone / PC) →</span>
+      </a>
+
+      <div class="qr-box">
+        <p class="qr-label">O escanea con la cámara de tu móvil para descargar al instante:</p>
+        <div class="qr-frame">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https://github.com/mserranogit/toledo2026/releases/download/v1.1.0/toledo-2026.apk" alt="QR Descargar Toledo 2026 APK">
+        </div>
+      </div>
+    </div>
+
+    <!-- Guía de instalación rápida -->
+    <div class="info-card">
+      <div class="info-title">
+        <span>📲</span>
+        <span>¿Cómo instalar el APK en tu móvil?</span>
+      </div>
+      <ul class="steps-list">
+        <li class="step-item">
+          <span class="step-number">1</span>
+          <div>Pulsa en <strong>"Descargar APK para Android"</strong> arriba. Tu navegador descargará el archivo <em>toledo-2026.apk</em>.</div>
+        </li>
+        <li class="step-item">
+          <span class="step-number">2</span>
+          <div>Si Chrome te avisa de que <em>"El archivo puede ser dañino"</em>, pulsa <strong>"Descargar de todos modos"</strong> (es el aviso habitual en Android para apps fuera de Google Play).</div>
+        </li>
+        <li class="step-item">
+          <span class="step-number">3</span>
+          <div>Toca el archivo descargado y selecciona <strong>"Instalar"</strong>. Si es la primera vez, activa la casilla <em>"Permitir desde esta fuente"</em>. ¡Listo para usar en Toledo!</div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer-note">
+      Toledo Imperial 2026 · Viaje 21 y 22 de Octubre · Desarrollado con Flutter
+    </div>
+  </div>
+</body>
+</html>
