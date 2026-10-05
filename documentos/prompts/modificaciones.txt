@@ -27,3 +27,6 @@ para la versión mobile:
 en la tarjeta Judería Mayor quitar el botón "escuchar" 
 
 
+el aparcamiento safont ha dejado de ser gratuito en toledo, cambia por el aparcamiento junto al circo romano de toledo, actualiza todo el contenido relacionado con este aparcamiento, y los mapas, en html y en la versión mobile.
+
+
